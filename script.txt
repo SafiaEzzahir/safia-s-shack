@@ -1,0 +1,7 @@
+1. a. welcome, adventurer!
+    - save not visited, give tutorial
+    - tutorial is levels 2 - ?
+   b. welcome back, adventurer!
+    - skip to level ?
+
+inputs - enter/space key (+prompt to press)

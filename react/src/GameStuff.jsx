@@ -50,7 +50,9 @@ function SpeechWindow() {
             // return level 1, plus string for corresponding "visited" status
             <Level1 visited={visitedstr} />
          );
-    };
+    } else if (level === 2) {
+        
+    }
 }
 
 export default SpeechWindow
