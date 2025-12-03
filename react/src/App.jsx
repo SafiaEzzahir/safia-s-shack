@@ -4,18 +4,6 @@ import './App.css'
 import SpeechWindow from './GameStuff.jsx'
 
 function App() {
-  useEffect(() => {
-    var visited = localStorage.getItem("visited");
-
-    if (visited) {
-      console.log("been there done that");
-      visited = true
-      //localStorage.removeItem("visited");
-    } else {
-      console.log("ya new here, ain't ya");
-      localStorage.setItem("visited", "true")
-    };
-  }, []);
 
   return (
     <div className='container'>
