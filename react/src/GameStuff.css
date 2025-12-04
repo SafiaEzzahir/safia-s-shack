@@ -16,3 +16,19 @@ body {
     font-style: normal;
     font-size: 18px;
 }
+
+.speech-window-text {
+    /* typing settings */
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+
+    animation: 
+        typing 8s
+    ;
+}
+
+@keyframes typing {
+    from { width: 0;}
+    to { width: 100%;}
+}

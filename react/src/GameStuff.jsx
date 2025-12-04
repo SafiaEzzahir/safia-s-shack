@@ -9,7 +9,7 @@ function Level1(props) {
 
     return (
         <div className="speech-window">
-                <p>LEVEL 1 {props.visited}</p>
+                <p className='speech-window-text'>LEVEL 1 {props.visited}</p>
             </div>
     )
 }
@@ -51,7 +51,7 @@ function SpeechWindow() {
             <Level1 visited={visitedstr} />
          );
     } else if (level === 2) {
-        
+
     }
 }
 
