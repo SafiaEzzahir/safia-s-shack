@@ -5,7 +5,7 @@ import './GameStuff.css'
 var level = null
 
 function Level1(props) {
-    console.log(props.visited);
+    //console.log(props.visited);
 
     return (
         <div className="speech-window">
@@ -15,6 +15,13 @@ function Level1(props) {
 }
 
 function SpeechWindow() {
+    useEffect(() => {
+        document.body.addEventListener('click', () => {
+            level += 1;
+            console.log("clicky")
+        });
+    });
+
     if (level) {
         console.log("level exists");
     } else {
