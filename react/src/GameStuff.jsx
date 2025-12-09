@@ -2,38 +2,34 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import './GameStuff.css'
 
-var level = null
-
 function Level1(props) {
     //console.log(props.visited);
 
     return (
         <div className="speech-window">
-                <p className='speech-window-text'>LEVEL 1 {props.visited}</p>
+                <p className='speech-window-text'>{props.visited}</p>
             </div>
     )
 }
 
 function SpeechWindow() {
+    const [level, setLevel] = useState(null);
+
     useEffect(() => {
-        document.body.addEventListener('click', () => {
-            level += 1;
-            console.log("clicky")
-        });
-    });
-
-    if (level) {
-        console.log("level exists");
-    } else {
-        //get level from sessionStorage
-        //set var level to level
-        console.log("level added");
-    };
-
-    level = 1;
+        const handleClick = () => {
+            setLevel(prevLevel => {
+                const newLevel = prevLevel ? prevLevel + 1 : 1;
+                console.log("clicky");
+                console.log(newLevel);
+                return newLevel;
+            });
+        };
+        document.body.addEventListener('click', handleClick);
+        return () => document.body.removeEventListener('click', handleClick);
+    }, []);
 
     if (level === 1) {
-        var visitedstr = 'error'; // why does it not go into the loop below?
+        var visitedstr = 'error';
         // get if the site's been visited before from localStorage
         var visitcheck = localStorage.getItem("visited");
 
@@ -41,16 +37,16 @@ function SpeechWindow() {
         if (visitcheck) {
 
             console.log("been there done that");
-            visitedstr = "been there done that";
+            visitedstr = "Welcome back, adventurer. I presume you know what you're looking for?";
 
         // below is if u want to test and remove visited to see what happens if you haven't
-        //localStorage.removeItem("visited");
+        localStorage.removeItem("visited");
 
         } else {
             console.log("ya new here, ain't ya");
             // add visited to localStorage
             localStorage.setItem("visited", "true");
-            visitedstr = "ya new here, ain't ya";
+            visitedstr = "Welcome, adventurer. Let me give you a tour of my shop!";
         };
 
         return (
@@ -58,7 +54,15 @@ function SpeechWindow() {
             <Level1 visited={visitedstr} />
          );
     } else if (level === 2) {
-
+        console.log("level 2");
+        return (
+            <div>hullo</div>
+        );
+    } else if (level === 3) {
+        console.log("level 3");
+        return (
+            <div>heelol</div>
+        );
     }
 }
 
