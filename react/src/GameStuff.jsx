@@ -2,9 +2,16 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import './GameStuff.css'
 
-function Level1(props) {
-    //console.log(props.visited);
+//                        |
+// wtf is happening here \|/
+// - use json file like an api, then i can store on server
+// - don't get CORS error pls!!
+fetch('/levels.json')
+    .then((response) => response.json())
+    //.then((json) => console.log(json))
+    .catch(error => console.error('error number 0 - fetch error', error))
 
+function Level1(props) {
     return (
         <div className="speech-window">
                 <p className='speech-window-text'>{props.visited}</p>
@@ -12,15 +19,44 @@ function Level1(props) {
     )
 }
 
-function SpeechWindow() {
-    const [level, setLevel] = useState(null);
+function Level(props) {
+    return (
+        <div className='speech-window'>
+            <p className='speech-window-text'></p>
+        </div>
+    )
+}
 
+function SpeechWindow() {
+    const [level, setLevel] = useState(1);
+    const [levels, setLevels] = useState({});
+
+    // fetch level script useEffect
     useEffect(() => {
+        async function load() {
+            try {
+                const res = await fetch('/levels.json');
+                if (!res.ok) {
+                    console.error('error number 1 - bad response', res.status);
+                    return;
+                }
+                const data = await res.json();
+                setLevels(data);
+            } catch (error) {
+                console.error('error number 2 - fetch failed', error);
+            }
+        }
+        load();
+    })
+
+    // clicks useEffect
+    useEffect(() => {
+        // check for and handle clicks
         const handleClick = () => {
             setLevel(prevLevel => {
+                // condition ? true : false
                 const newLevel = prevLevel ? prevLevel + 1 : 1;
-                console.log("clicky");
-                console.log(newLevel);
+
                 return newLevel;
             });
         };
@@ -35,15 +71,12 @@ function SpeechWindow() {
 
         // check if there is data - if yes, return hey again
         if (visitcheck) {
-
-            console.log("been there done that");
             visitedstr = "Welcome back, adventurer. I presume you know what you're looking for?";
 
         // below is if u want to test and remove visited to see what happens if you haven't
-        localStorage.removeItem("visited");
+        //localStorage.removeItem("visited");
 
         } else {
-            console.log("ya new here, ain't ya");
             // add visited to localStorage
             localStorage.setItem("visited", "true");
             visitedstr = "Welcome, adventurer. Let me give you a tour of my shop!";
@@ -56,14 +89,13 @@ function SpeechWindow() {
     } else if (level === 2) {
         console.log("level 2");
         return (
-            <div>hullo</div>
+            <Level2 />
         );
     } else if (level === 3) {
         console.log("level 3");
         return (
             <div>heelol</div>
         );
-    }
-}
+}};
 
 export default SpeechWindow
