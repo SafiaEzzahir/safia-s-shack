@@ -4,4 +4,12 @@
    b. welcome back, adventurer!
     - skip to level ?
 
-inputs - enter/space key (+prompt to press)
+inputs - click button on text window
+styling for text bubble
+    - border design
+    - font + sizing
+    - typing animation
+
+to do:
+ - use fetch API to read levels.json
+ - create Level template and use props (?)
