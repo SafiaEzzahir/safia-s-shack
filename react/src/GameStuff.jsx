@@ -2,8 +2,10 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import './GameStuff.css'
 
+const end = "end"
+
 //                        |
-// wtf is happening here \|/    ok girlie basically it's using fetch API <3
+// wtf is happening here \|/    ok girlie basically it's using fetch API <3 
 // - use json file like an api, then i can store on server
 // - don't get CORS error pls!!
 fetch('/levels.json')
@@ -28,7 +30,14 @@ function Level(props) {
     )
 }
 
-function SpeechWindow() {
+// end level template
+//how do i get the stage to change on the other one
+// detect what the element is?
+// check a variable every time?
+// send message in speechwindow?
+// have an attribute of speechwindow which determines the stage?
+
+function SpeechWindow({ onFinishLevels }) {
     const [level, setLevel] = useState(1);
     const [levels, setLevels] = useState({});
 
@@ -52,20 +61,29 @@ function SpeechWindow() {
 
     // clicks useEffect
     useEffect(() => {
+
         // check for and handle clicks
         const handleClick = () => {
             setLevel(prevLevel => {
-                // condition ? true : false
+                const last = levels && levels[end];
+                // if we're at the last level, signal finish instead of advancing
+                if (typeof last !== 'undefined' && String(prevLevel) === String(last)) {
+                    if (typeof onFinishLevels === 'function') onFinishLevels();
+                    return prevLevel;
+                }
                 const newLevel = prevLevel ? prevLevel + 1 : 1;
-
                 return newLevel;
             });
         };
+
         document.body.addEventListener('click', handleClick);
         return () => document.body.removeEventListener('click', handleClick);
     }, []);
 
-    if (level === 1) {
+    if (level == levels[end]) {
+        if (typeof onFinishLevels === 'function') onFinishLevels();
+        return null;
+    } else if (level === 1) {
         var visitedstr = 'error';
         // get if the site's been visited before from localStorage
         var visitcheck = localStorage.getItem("visited");
