@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import './GameStuff.css'
 
 //                        |
-// wtf is happening here \|/
+// wtf is happening here \|/    ok girlie basically it's using fetch API <3
 // - use json file like an api, then i can store on server
 // - don't get CORS error pls!!
 fetch('/levels.json')
@@ -19,10 +19,11 @@ function Level1(props) {
     )
 }
 
+// level template
 function Level(props) {
     return (
         <div className='speech-window'>
-            <p className='speech-window-text'></p>
+            <p className='speech-window-text'>{props.text}</p>
         </div>
     )
 }
@@ -86,16 +87,11 @@ function SpeechWindow() {
             // return level 1, plus string for corresponding "visited" status
             <Level1 visited={visitedstr} />
          );
-    } else if (level === 2) {
-        console.log("level 2");
+    } else{
+        var levelstring = String(level)
         return (
-            <Level2 />
-        );
-    } else if (level === 3) {
-        console.log("level 3");
-        return (
-            <div>heelol</div>
-        );
-}};
+        <Level text={String(levels[levelstring])}/>
+    )};
+};
 
 export default SpeechWindow
