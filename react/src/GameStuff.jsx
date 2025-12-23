@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import './GameStuff.css'
 
 const end = "end"
+var nextLevel = null
 
 //                        |
 // wtf is happening here \|/    ok girlie basically it's using fetch API <3 
@@ -71,7 +72,7 @@ function SpeechWindow({ onFinishLevels }) {
                     if (typeof onFinishLevels === 'function') onFinishLevels();
                     return prevLevel;
                 }
-                const newLevel = prevLevel ? prevLevel + 1 : 1;
+                const newLevel = nextLevel;
                 return newLevel;
             });
         };
@@ -91,6 +92,7 @@ function SpeechWindow({ onFinishLevels }) {
         // check if there is data - if yes, return hey again
         if (visitcheck) {
             visitedstr = "Welcome back, adventurer. I presume you know what you're looking for?";
+            nextLevel = 3
 
         // below is if u want to test and remove visited to see what happens if you haven't
         //localStorage.removeItem("visited");
@@ -107,6 +109,9 @@ function SpeechWindow({ onFinishLevels }) {
          );
     } else{
         var levelstring = String(level)
+        
+        nextLevel = level + 1
+
         return (
         <Level text={String(levels[levelstring])}/>
     )};
