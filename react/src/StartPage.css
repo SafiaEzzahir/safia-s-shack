@@ -1,3 +1,18 @@
 #StartPage {
+    height: 96vh;
     background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    outline: none;
+    background: none;
+    font: inherit;
+    color: inherit;
+    border: none;
+    cursor: pointer;
+    padding: 15px;
 }
