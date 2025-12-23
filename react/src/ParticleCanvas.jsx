@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 import './ParticleCanvas.css';
 
-function ParticleCanvas({ colorPalette = ['#6fffcaff', '#ff4d4dff', '#ff6f08ff', '#451bedff'], maxParticles = 20 }) {
+function ParticleCanvas({ colorPalette = ['#22b64e', '#2ab4d9', '#6fe2ff', '#e99b07', '#ffc500', '#ed1c24', '#ff7289', '#ff3982'], maxParticles = 20 }) {
     // useRef keeps a value between renders without rerendering
     const CanvasRef = useRef(null);
     const ParticlesRef = useRef([]);
