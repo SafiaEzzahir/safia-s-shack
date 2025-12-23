@@ -4,3 +4,58 @@
     justify-content: center;
     align-items: center;
 }
+
+#RightSection {
+    width: 500px;
+    border: 3px solid greenyellow;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+
+    position: relative;
+}
+
+.list {
+    list-style: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0px;
+    background-color: black;
+
+    position: relative;
+    z-index: 2;
+}
+
+ul>button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    width: 50px;
+    overflow: hidden;
+    flex-wrap: nowrap;
+    text-wrap: nowrap;
+
+    background: none;
+	color: inherit;
+	border: none;
+	font: inherit;
+	outline: inherit;
+}
+
+ul>button:hover {
+    width: auto;
+}
+
+#RightSectionPage {
+    margin-left: 80px;
+    position: absolute;
+    padding: 15px;
+    z-index: 0;
+}
+.ic {
+    width: 50px;
+    padding: 10px;
+}
