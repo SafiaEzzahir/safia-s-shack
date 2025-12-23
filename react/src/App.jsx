@@ -23,7 +23,9 @@ function App() {
   if (currentStage === 'start') {
 
     return (
-      <StartPage />
+      <StartPage 
+        onStartClick={() => {setCurrentStage('intro'); sessionStorage.setItem("currentStage", 'intro')}}
+        onSkipClick={() => {setCurrentStage('shop'); sessionStorage.setItem('currentStage', "shop")}} />
     );
 
   } else if (currentStage === 'intro'){
