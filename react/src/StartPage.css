@@ -23,11 +23,12 @@ button {
     padding: 15px;
 }
 
-#title {
+#Title {
     font-size: 100px;
     color: #e99b07;
+    font-family: pixelFont;
 }
 
-#desc {
+#Desc {
     margin-bottom: 40px;
 }

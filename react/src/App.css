@@ -1,3 +1,8 @@
+@font-face {
+  font-family: pixelFont;
+  src: url(BoldPixels.otf);
+}
+
 .container {
   width: 97.5vw;
   height: 96vh;
@@ -15,7 +20,7 @@ img {
 
 body {
   color: #e3e4e3;
-  font-family: "Texturina", serif;
+  font-family: pixelFont;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
