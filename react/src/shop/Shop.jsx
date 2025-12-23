@@ -23,17 +23,17 @@ function RightSection(){
                 </button>
 
                 <button onClick={() => console.log('Helo world!')}>
-                    <img src="src/assets/medalicon.png" alt="medal icon" className='ic' />
+                    <img src="src/assets/wardrobeicon.png" alt="dress hanging on a hanger icon" className='ic' />
                     <p>wardrobe</p>
                 </button>
                 
                 <button>
-                    <img src="src/assets/medalicon.png" alt="medal icon" className='ic' />
+                    <img src="src/assets/stickericon.png" alt="sticker icon" className='ic' />
                     <p>stickers</p>
                 </button>
                 
                 <button>
-                    <img src="src/assets/medalicon.png" alt="medal icon" className='ic' />
+                    <img src="src/assets/planticon.png" alt="plant in a pot icon" className='ic' />
                     <p>plants</p>
                 </button>
                 
