@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 import './ParticleCanvas.css';
 
-function ParticleCanvas({ colorPalette = ['#ff6fb3', '#ff4da6', '#ffd1e8'], maxParticles = 20 }) {
+function ParticleCanvas({ colorPalette = ['#6fffcaff', '#ff4d4dff', '#ff6f08ff', '#451bedff'], maxParticles = 20 }) {
     // useRef keeps a value between renders without rerendering
     const CanvasRef = useRef(null);
     const ParticlesRef = useRef([]);
@@ -44,8 +44,6 @@ function ParticleCanvas({ colorPalette = ['#ff6fb3', '#ff4da6', '#ffd1e8'], maxP
         window.addEventListener('resize', resize)
         // ^ listens if window is resized, then resizes canvas
 
-        Ctx.globalCompositeOperation = 'lighter';
-
         function createParticle(x, y, vx, vy) {
             let p = PoolRef.current.pop();
             if (!p) p = {};
@@ -55,8 +53,8 @@ function ParticleCanvas({ colorPalette = ['#ff6fb3', '#ff4da6', '#ffd1e8'], maxP
             p.vx = vx; // v = velocity
             p.vy = vy;
 
-            p.size = 2 + Math.random() * 6;
-            p.life = 300 + Math.random() * 6; // how long it'll survive
+            p.size = 12 + Math.random() * 6;
+            p.life = 1000 + Math.random() * 9; // how long it'll survive
             p.age = 0; // it's a baby!!
             p.color = colorPalette[Math.floor(Math.random() * colorPalette.length)];
             return p;
@@ -98,7 +96,7 @@ function ParticleCanvas({ colorPalette = ['#ff6fb3', '#ff4da6', '#ffd1e8'], maxP
 
             if (last) {
                 const dx = x - last.x, dy = y - last.y;
-                speed = Math.sqrt(dx * dx + dy * dy) / dt * 16;
+                speed = (Math.sqrt(dx * dx + dy * dy) / dt * 16)/4;
 
                 const dist = Math.hypot(dx, dy);
                 const steps = Math.ceil(dist/8);
@@ -150,7 +148,9 @@ function ParticleCanvas({ colorPalette = ['#ff6fb3', '#ff4da6', '#ffd1e8'], maxP
                 Ctx.globalAlpha = alpha;
                 Ctx.shadowColor = p.color;
                 Ctx.shadowBlur = 10;
-                Ctx.arc(p.x, p.y, size, 0, Math.PI * 2);
+
+                Ctx.rect(p.x,p.y,size,size);
+                Ctx.stroke();
                 Ctx.fill();
                 Ctx.restore();
             }
