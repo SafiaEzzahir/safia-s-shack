@@ -8,7 +8,7 @@ import TrophiesPage from './TrophiesPage';
 import WardrobePage from './WardrobePage';
 import PlantsPage from './PlantsPage';
 import FasttravelPage from './FasttravelPage';
-import PigeonholePage from './PigeonholePage';
+import PostboxPage from './PostboxPage';
 
 // if clicked on shop button - open right section
 // else - hide right section
@@ -36,9 +36,9 @@ function Page({ pagetype }){
         return (
             <FasttravelPage />
         )
-    } else if (pagetype == 'pigeonhole') {
+    } else if (pagetype == 'postbox') {
         return (
-            <PigeonholePage />
+            <PostboxPage />
         )
     } else if (pagetype == 'home') {
         return (
@@ -93,9 +93,9 @@ function RightSection(){
                     <p>fast travel</p>
                 </button>
                 
-                <button onClick={() => changePageType('pigeonhole')}>
+                <button onClick={() => changePageType('postbox')}>
                     <img src="src/assets/medalicon.png" alt="medal icon" className='ic' />
-                    <p>pigeonhole</p>
+                    <p>post box</p>
                 </button>
             </ul>
 
