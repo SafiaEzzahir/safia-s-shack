@@ -49,8 +49,12 @@ function SpeechWindow({ onFinishLevels }) {
                     console.error('error number 1 - bad response', res.status);
                     return;
                 }
+
                 const data = await res.json();
                 setLevels(data);
+
+                localStorage.removeItem('visited');
+
                 // detect if site has been visited before and persist flag
                 const visitcheck = localStorage.getItem("visited");
                 if (visitcheck) {
