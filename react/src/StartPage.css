@@ -25,10 +25,51 @@ button {
 
 #Title {
     font-size: 100px;
+    margin-bottom: 30px;
+    padding: none;
     color: #e99b07;
     font-family: pixelFont;
+    text-align: center;
 }
 
 #Desc {
-    margin-bottom: 40px;
+    font-size: 20px;
+    color: #a34e2b;
+    margin-bottom: 20px;
+    padding: none;
+}
+
+#Start {
+    font-size: 40px;
+    min-height: 100px;
+}
+
+#Start:hover {
+    color: #ff3982;
+    animation: ShrinkButton2 0.2s linear 0s 1 forwards;
+}
+
+@keyframes RotateButton {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(15deg); }
+    50% { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
+}
+
+#Skip {
+    font-size: 18px;
+    min-height: 50px;
+}
+
+#Skip:hover {
+    color: #ff5686;
+    animation: ShrinkButton1 0.3s ease-in 0s 1 forwards;
+}
+
+@keyframes ShrinkButton1 {
+    100% { font-size: 16px; }
+}
+
+@keyframes ShrinkButton2 {
+    100% { font-size: 35px; }
 }

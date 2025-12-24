@@ -6,10 +6,10 @@ function StartPage({ onStartClick, onSkipClick }) {
         <div>
             <ParticleCanvas />
             <div id='StartPage'>
-                <p id='Title'>safia ezzahir</p>
+                <h1 id='Title'>safia ezzahir</h1>
                 <p id="Desc">a personal website inspired by text-adventure video games</p>
-                <button onClick={onStartClick}>start</button>
-                <button onClick={onSkipClick}>click here to skip to my portfolio</button>
+                <button id='Start' onClick={onStartClick}>start</button>
+                <button id='Skip' onClick={onSkipClick}>click here to skip to my portfolio</button>
             </div>
         </div>
     )
