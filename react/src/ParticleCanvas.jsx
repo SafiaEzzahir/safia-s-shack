@@ -38,7 +38,7 @@ function ParticleCanvas({ colorPalette = ['#22b64e', '#2ab4d9', '#6fe2ff', '#e99
             p.vy = vy;
 
             p.size = 1 + Math.random() * 6;
-            p.life = 100000 + Math.random() * 20;
+            p.life = 1000 + Math.random() * 20;
             p.age = 0;
             p.color = colorPalette[Math.floor(Math.random() * colorPalette.length)];
             return p;
@@ -46,8 +46,8 @@ function ParticleCanvas({ colorPalette = ['#22b64e', '#2ab4d9', '#6fe2ff', '#e99
         
         function spawnBackgroundParticle(count, lastX, lastY) {
             
-            const x = Math.random() * (Canvas.width - 5)
-            const y = Math.random() * (Canvas.height - 5)
+            const x = Math.random() * (Canvas.width - Dpr / 5);
+            const y = Math.random() * (Canvas.height - Dpr / 5);
 
             for (let i = 0; i < count; i++) {
                 const angle = Math.atan2(y - (lastY ?? y), x - (lastX ?? x) + (Math.random() - 0.5) * 1.2);
