@@ -103,13 +103,12 @@ function ParticleCanvas({ colorPalette = ['#22b64e', '#2ab4d9', '#6fe2ff', '#e99
             p.vx = vx; // v = velocity
             p.vy = vy;
 
-            p.size = 12 + Math.random() * 6;
+            p.size = 5 + Math.random() * 6;
             p.life = 1000 + Math.random() * 9; // how long it'll survive
             p.age = 0; // it's a baby!!
             p.color = colorPalette[Math.floor(Math.random() * colorPalette.length)];
             return p;
         }
-
 
         function spawn(x, y, count, speedScale, lastX, lastY) {
 
