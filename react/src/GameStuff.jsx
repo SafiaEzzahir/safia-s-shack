@@ -9,10 +9,6 @@ var nextLevel = null
 // wtf is happening here \|/    ok girlie basically it's using fetch API <3 
 // - use json file like an api, then i can store on server
 // - don't get CORS error pls!!
-fetch('/levels.json')
-    .then((response) => response.json())
-    //.then((json) => console.log(json))
-    .catch(error => console.error('error number 0 - fetch error', error))
 
 function Level1(props) {
     return (
@@ -58,7 +54,7 @@ function SpeechWindow({ onFinishLevels }) {
             }
         }
         load();
-    })
+    }, [])
 
     // clicks useEffect
     useEffect(() => {
@@ -95,7 +91,7 @@ function SpeechWindow({ onFinishLevels }) {
             nextLevel = 3
 
         // below is if u want to test and remove visited to see what happens if you haven't
-        //localStorage.removeItem("visited");
+        localStorage.removeItem("visited");
 
         } else {
             // add visited to localStorage
