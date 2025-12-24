@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { useEffect } from 'react'
+import { useRef } from 'react'
 import './GameStuff.css'
 
 const end = "end"
-var nextLevel = null
 
 //                        |
 // wtf is happening here \|/    ok girlie basically it's using fetch API <3 
@@ -37,6 +37,8 @@ function Level(props) {
 function SpeechWindow({ onFinishLevels }) {
     const [level, setLevel] = useState(1);
     const [levels, setLevels] = useState({});
+    const [visited, setVisited] = useState(false);
+    const skipFirstClickRef = useRef(true);
 
     // fetch level script useEffect
     useEffect(() => {
@@ -49,6 +51,14 @@ function SpeechWindow({ onFinishLevels }) {
                 }
                 const data = await res.json();
                 setLevels(data);
+                // detect if site has been visited before and persist flag
+                const visitcheck = localStorage.getItem("visited");
+                if (visitcheck) {
+                    setVisited(true);
+                } else {
+                    localStorage.setItem("visited", "true");
+                    setVisited(false);
+                }
             } catch (error) {
                 console.error('error number 2 - fetch failed', error);
             }
@@ -60,7 +70,8 @@ function SpeechWindow({ onFinishLevels }) {
     useEffect(() => {
 
         // check for and handle clicks
-        const handleClick = () => {
+        const handleClick = (e) => {
+            if (skipFirstClickRef.current) return;
             setLevel(prevLevel => {
                 const last = levels && levels[end];
                 // if we're at the last level, signal finish instead of advancing
@@ -68,36 +79,42 @@ function SpeechWindow({ onFinishLevels }) {
                     if (typeof onFinishLevels === 'function') onFinishLevels();
                     return prevLevel;
                 }
-                const newLevel = nextLevel;
-                return newLevel;
+
+                // compute next level deterministically (no module-level state)
+                if (prevLevel === 1) {
+                    return visited ? 3 : 2;
+                }
+                return prevLevel + 1;
             });
         };
 
+        // avoid handling the click that caused this component to mount
+        const skipTimeout = setTimeout(() => { skipFirstClickRef.current = false; }, 0);
         document.body.addEventListener('click', handleClick);
-        return () => document.body.removeEventListener('click', handleClick);
-    }, []);
+        return () => { clearTimeout(skipTimeout); document.body.removeEventListener('click', handleClick); };
+    }, [levels, visited, onFinishLevels]);
+
+    // call onFinishLevels as a post-render side-effect when we reach the final level
+    useEffect(() => {
+        const last = levels && levels[end];
+        if (typeof last !== 'undefined' && String(level) === String(last)) {
+            if (typeof onFinishLevels === 'function') onFinishLevels();
+        }
+    }, [level, levels, onFinishLevels]);
 
     if (level == levels[end]) {
-        if (typeof onFinishLevels === 'function') onFinishLevels();
+        console.log(level);
         return null;
     } else if (level === 1) {
+        console.log(level);
+
         var visitedstr = 'error';
-        // get if the site's been visited before from localStorage
-        var visitcheck = localStorage.getItem("visited");
-
-        // check if there is data - if yes, return hey again
-        if (visitcheck) {
+        // determine visited string from state set during load
+        if (visited) {
             visitedstr = "Welcome back, adventurer. I presume you know what you're looking for?";
-            nextLevel = 3
-
-        // below is if u want to test and remove visited to see what happens if you haven't
-        localStorage.removeItem("visited");
-
         } else {
-            // add visited to localStorage
-            localStorage.setItem("visited", "true");
             visitedstr = "Welcome, adventurer. Let me give you a tour of my shop!";
-        };
+        }
 
         return (
             // return level 1, plus string for corresponding "visited" status
@@ -106,8 +123,6 @@ function SpeechWindow({ onFinishLevels }) {
     } else{
         var levelstring = String(level)
         
-        nextLevel = level + 1
-
         return (
         <Level text={String(levels[levelstring])}/>
     )};
