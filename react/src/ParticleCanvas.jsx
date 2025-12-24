@@ -1,18 +1,26 @@
 import { useRef, useEffect } from 'react';
 import './ParticleCanvas.css';
 
+// NOTE: Math.random() returns number between 0 and 1, so multiply by the max number you can have
+
+// spawn 20 background particles on resize, respawn when one dies
+// needs to spawn in random place, don't specify in spawn function
+
 function ParticleCanvas({ colorPalette = ['#22b64e', '#2ab4d9', '#6fe2ff', '#e99b07', '#ffc500', '#ed1c24', '#ff7289', '#ff3982'], maxParticles = 20 }) {
     // useRef keeps a value between renders without rerendering
     const CanvasRef = useRef(null);
     const ParticlesRef = useRef([]);
     //                 |
     // what are those \|/
+    // poolref is for reusing particles
     const PoolRef = useRef([]);
     const RafRef = useRef(null);
 
     const LastPosRef = useRef(null);
     const LastTimeRef = useRef(performance.now());
 
+    const BackParticlesRef = useRef([]);
+    const BackPoolRef = useRef([]);
 
     useEffect(() => {
         const Canvas = CanvasRef.current;
@@ -20,7 +28,46 @@ function ParticleCanvas({ colorPalette = ['#22b64e', '#2ab4d9', '#6fe2ff', '#e99
         
         if (!Canvas) return;
 
+        function createBackgroundParticle(x, y, vx, vy) {
+            let p = BackPoolRef.current.pop();
+            if (!p) p = {};
 
+            p.x = x;
+            p.y = y;
+            p.vx = vx;
+            p.vy = vy;
+
+            p.size = 1 + Math.random() * 6;
+            p.life = 100000 + Math.random() * 20;
+            p.age = 0;
+            p.color = colorPalette[Math.floor(Math.random() * colorPalette.length)];
+            return p;
+        }
+        
+        function spawnBackgroundParticle(count, lastX, lastY) {
+            
+            const x = Math.random() * (Canvas.width - 5)
+            const y = Math.random() * (Canvas.height - 5)
+
+            for (let i = 0; i < count; i++) {
+                const angle = Math.atan2(y - (lastY ?? y), x - (lastX ?? x) + (Math.random() - 0.5) * 1.2);
+                // why is random only added to x val?
+                const speed = 0.05 + Math.random() * 1.2;
+                const vx = Math.cos(angle) * speed;
+                const vy = Math.sin(angle) * speed;
+
+                const p = createBackgroundParticle(x + (Math.random() - 0.5) * 6, y + (Math.random() - 0.5) * 6, vx, vy);
+                // uses createBackgroundParticle function from above
+
+                BackParticlesRef.current.push(p);
+                if (BackParticlesRef.current.length > maxParticles) {
+                    const removed = BackParticlesRef.current.shift();
+                    BackPoolRef.current.push(removed);
+                }
+
+            }
+        }
+        
         // Ctx stands for Context
         const Ctx = Canvas.getContext('2d');
         let Dpr = window.devicePixelRatio || 1;
@@ -29,16 +76,19 @@ function ParticleCanvas({ colorPalette = ['#22b64e', '#2ab4d9', '#6fe2ff', '#e99
             Dpr = window.devicePixelRatio || 1;
 
             // math.max returns largest of 2
-            Canvas.width = Math.max(1, innerWidth * Dpr)
-            Canvas.height = Math.max(1, innerHeight * Dpr)
+            Canvas.width = Math.max(1, innerWidth * Dpr);
+            Canvas.height = Math.max(1, innerHeight * Dpr);
 
-            Canvas.style.width = innerWidth + 'px'
-            Canvas.style.height = innerHeight + 'px'
+            Canvas.style.width = innerWidth + 'px';
+            Canvas.style.height = innerHeight + 'px';
             // ^^^ is this css styling??
         
-            Ctx.setTransform(Dpr, 0, 0, Dpr, 0, 0)
+            Ctx.setTransform(Dpr, 0, 0, Dpr, 0, 0);
             // whats a DOMMatrix ^
+
+            spawnBackgroundParticle(20);
         }
+
 
         resize();
         window.addEventListener('resize', resize)
@@ -60,18 +110,23 @@ function ParticleCanvas({ colorPalette = ['#22b64e', '#2ab4d9', '#6fe2ff', '#e99
             return p;
         }
 
+
         function spawn(x, y, count, speedScale, lastX, lastY) {
 
-            // wth is going on down here
-            // - ?? operator
-            // - ++
+            // - ?? operator --- nullish coalescing operator, returns first value that isn't null or undefined
+            // - ++ --- increment by one
             // - trig - cos & sin
             // - push & shift
 
             for (let i = 0; i <  count; i++) {
+                // spawns count particles
                 const angle = Math.atan2(y - (lastY ?? y), x - (lastX ?? x) + (Math.random() - 0.5) * 1.2);
+                // atan2 gets angle between previous point to spawn point
+                // plus random jitter <3
                 const speed = (0.2 + Math.random() * 1.2) * (speedScale || 1);
+                // base speed is 0.2 plus random up to 1.2
                 const vx = Math.cos(angle) * speed;
+                // 
                 const vy = Math.sin(angle) * speed;
                 const p = createParticle(x + (Math.random() - 0.5) * 6, y + (Math.random() - 0.5) * 6, vx, vy);
 
@@ -82,6 +137,7 @@ function ParticleCanvas({ colorPalette = ['#22b64e', '#2ab4d9', '#6fe2ff', '#e99
                 }
             }
         }
+
 
         function onMove(e) {
             // what is ? operator
@@ -122,8 +178,42 @@ function ParticleCanvas({ colorPalette = ['#22b64e', '#2ab4d9', '#6fe2ff', '#e99
 
             LastTimeRef.current = now;
             const particles = ParticlesRef.current;
+            const backParticles = BackParticlesRef.current;
             
             Ctx.clearRect(0, 0, Canvas.width/Dpr, Canvas.height/Dpr);
+
+            for (let i = backParticles.length - 1; i >= 0; i--) {
+                const p  = backParticles[i];
+                p.age += dt;
+                if (p.age >= p.life) {
+                    backParticles.splice(i, 1);
+                    BackPoolRef.current.push(p);
+                    spawnBackgroundParticle(1);
+                    continue;
+                }
+
+                p.vx *= 0.98;
+                p.vy *= 0.98;
+                p.x += p.vx * (dt/16);
+                p.y += p.vy * (dt/16) + 0.02 * (dt/16);
+
+                // alpha value for the particle's colour
+                const t = p.age / p.life;
+                const alpha = 1 - t;
+                const size = p.size * (1 - t * 0.8);
+
+                Ctx.save();
+                Ctx.beginPath();
+                Ctx.fillStyle = p.color;
+                Ctx.globalAlpha = alpha;
+                Ctx.shadowColor = p.color;
+                Ctx.shadowBlur = 10;
+
+                Ctx.rect(p.x, p.y, size, size);
+                Ctx.stroke();
+                Ctx.fill();
+                Ctx.restore();
+            }
 
             for (let i = particles.length - 1; i >= 0; i--) {
                 const p = particles[i];
@@ -154,8 +244,10 @@ function ParticleCanvas({ colorPalette = ['#22b64e', '#2ab4d9', '#6fe2ff', '#e99
                 Ctx.fill();
                 Ctx.restore();
             }
+
             RafRef.current = requestAnimationFrame(update);
         }
+
         RafRef.current = requestAnimationFrame(update);
 
         return () => {
