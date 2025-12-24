@@ -3,7 +3,12 @@ import { useState } from 'react';
 import './Shop.css';
 
 import StickersPage from './StickersPage';
-import HomePage from './Home'
+import HomePage from './Home';
+import TrophiesPage from './TrophiesPage';
+import WardrobePage from './WardrobePage';
+import PlantsPage from './PlantsPage';
+import FasttravelPage from './FasttravelPage';
+import PigeonholePage from './PigeonholePage';
 
 // if clicked on shop button - open right section
 // else - hide right section
@@ -11,21 +16,37 @@ import HomePage from './Home'
 // Page determines what goes next to right section depending on what li has been clicked
 function Page({ pagetype }){
     console.log(pagetype)
-    if (pagetype == 'awards') {
+    if (pagetype == 'trophies') {
         return (
-            <div>awards</div>
+            <TrophiesPage />
         )
     } else if (pagetype == 'wardrobe') {
         return (
-            <div>wardrobe</div>
+            <WardrobePage />
         )
     } else if (pagetype == 'stickers') {
         return (
             <StickersPage />
         )
-    } else {
+    } else if (pagetype == 'plants') {
+        return (
+            <PlantsPage />
+        )
+    } else if (pagetype == 'fast travel') {
+        return (
+            <FasttravelPage />
+        )
+    } else if (pagetype == 'pigeonhole') {
+        return (
+            <PigeonholePage />
+        )
+    } else if (pagetype == 'home') {
         return (
             <HomePage />
+        )
+    } else {
+        return (
+            <div>! - - - - ERROR - - - - !</div>
         )
     }
 }
@@ -47,9 +68,9 @@ function RightSection(){
         <div id="RightSection">
             <ul className='list'>
 
-                <button onClick={() => changePageType('awards')}>
+                <button onClick={() => changePageType('trophies')}>
                     <img src="src/assets/medalicon.png" alt="medal icon" className='ic' />
-                    <p>*certs and awards*</p>
+                    <p>trophies</p>
                 </button>
 
                 <button onClick={() => changePageType('wardrobe')}>
