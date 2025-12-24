@@ -37,20 +37,19 @@ function ParticleCanvas({ colorPalette = ['#22b64e', '#2ab4d9', '#6fe2ff', '#e99
             p.vx = vx;
             p.vy = vy;
 
-            p.size = 1 + Math.random() * 6;
-            p.life = 1000 + Math.random() * 20;
+            p.size = 3 + Math.random() * 6;
+            p.life = 2500 + Math.random() * 100;
             p.age = 0;
             p.color = colorPalette[Math.floor(Math.random() * colorPalette.length)];
             return p;
         }
         
         function spawnBackgroundParticle(count, lastX, lastY) {
-            
-            const x = Math.random() * (Canvas.width - Dpr / 5);
-            const y = Math.random() * (Canvas.height - Dpr / 5);
-
             for (let i = 0; i < count; i++) {
-                const angle = Math.atan2(y - (lastY ?? y), x - (lastX ?? x) + (Math.random() - 0.5) * 1.2);
+                const x = Math.random() * (Canvas.width - Dpr / 5);
+                const y = Math.random() * (Canvas.height - Dpr / 5);
+                
+                const angle = Math.atan2(y - (lastY ?? y) + (Math.random() - 0.5) * 1.2, x - (lastX ?? x) + (Math.random() - 0.5) * 1.2);
                 // why is random only added to x val?
                 const speed = 0.05 + Math.random() * 1.2;
                 const vx = Math.cos(angle) * speed;
@@ -191,8 +190,8 @@ function ParticleCanvas({ colorPalette = ['#22b64e', '#2ab4d9', '#6fe2ff', '#e99
                     continue;
                 }
 
-                p.vx *= 0.98;
-                p.vy *= 0.98;
+                p.vx *= 0.995;
+                p.vy *= 0.995;
                 p.x += p.vx * (dt/16);
                 p.y += p.vy * (dt/16) + 0.02 * (dt/16);
 
