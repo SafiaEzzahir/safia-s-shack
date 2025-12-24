@@ -6,7 +6,7 @@ import './ParticleCanvas.css';
 // spawn 20 background particles on resize, respawn when one dies
 // needs to spawn in random place, don't specify in spawn function
 
-function ParticleCanvas({ colorPalette = ['#22b64e', '#2ab4d9', '#6fe2ff', '#e99b07', '#ffc500', '#ed1c24', '#ff7289', '#ff3982'], maxParticles = 20 }) {
+function ParticleCanvas({ colorPalette = ['#22b64e', '#2ab4d9', '#6fe2ff', '#e99b07', '#ffc500', '#ed1c24', '#ff7289', '#ff3982'], maxParticles = 20, maxBackgroundParticles = 40 }) {
     // useRef keeps a value between renders without rerendering
     const CanvasRef = useRef(null);
     const ParticlesRef = useRef([]);
@@ -60,7 +60,7 @@ function ParticleCanvas({ colorPalette = ['#22b64e', '#2ab4d9', '#6fe2ff', '#e99
                 // uses createBackgroundParticle function from above
 
                 BackParticlesRef.current.push(p);
-                if (BackParticlesRef.current.length > maxParticles) {
+                if (BackParticlesRef.current.length > maxBackgroundParticles) {
                     const removed = BackParticlesRef.current.shift();
                     BackPoolRef.current.push(removed);
                 }
@@ -256,7 +256,7 @@ function ParticleCanvas({ colorPalette = ['#22b64e', '#2ab4d9', '#6fe2ff', '#e99
             window.removeEventListener('touchmove', onMove);
         }
 
-    }, [colorPalette, maxParticles]);
+    }, [colorPalette, maxParticles, maxBackgroundParticles]);
 
 
     return (
