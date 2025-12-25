@@ -106,22 +106,42 @@ function RightSection(){
     )
 }
 
-function LeftSection(){
+function LeftSection({ ClickFunction }){
     return (
         <div id='LeftSection'>
-            <img id='Shack' src="./public/shack.png" alt="safia's shack" />
+            <button onClick={ClickFunction}>
+                <img id='Shack' src="./public/shack.png" alt="safia's shack" />
+            </button>
             <a href='./public/cv.pdf' download='safiaezzahir.pdf' id='DownloadCV'>download cv</a>
         </div>
     )
 }
 
 function Shop(){
-    return(
-        <div id="shop">
-            <LeftSection />
-            <RightSection />
-        </div>
-    )
+    const [ShopOpened, SetShopOpened] = useState(false)
+
+    function OpenShop() {
+        if (ShopOpened) {
+            SetShopOpened(false)
+        } else {
+            SetShopOpened(true)
+        }
+    }
+    
+    if (ShopOpened) {
+        return (
+            <div id="shop">
+                <LeftSection ClickFunction={OpenShop} />
+                <RightSection />
+            </div>
+        )
+    } else {
+        return (
+            <div>
+                <LeftSection ClickFunction={OpenShop} />
+            </div>
+        )
+    }
 }
 
 export default Shop
