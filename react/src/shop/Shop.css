@@ -43,10 +43,13 @@ ul>button {
 	border: none;
 	font: inherit;
 	outline: inherit;
+
+    transition: width 0.35s linear, padding-right 0.3s ease;
 }
 
 ul>button:hover {
     width: auto;
+    padding-right: 20px;
 }
 
 #RightSectionPage {
