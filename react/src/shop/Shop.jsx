@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import './Shop.css';
 
+import ParticleCanvas from '../ParticleCanvas';
+
 import StickersPage from './StickersPage';
 import HomePage from './Home';
 import TrophiesPage from './TrophiesPage';
@@ -131,6 +133,7 @@ function Shop(){
     if (ShopOpened) {
         return (
             <div id="shop">
+                <ParticleCanvas cursorParticles={false}/>
                 <LeftSection ClickFunction={OpenShop} />
                 <RightSection />
             </div>
@@ -138,6 +141,7 @@ function Shop(){
     } else {
         return (
             <div>
+                <ParticleCanvas cursorParticles={false} />
                 <LeftSection ClickFunction={OpenShop} />
             </div>
         )

@@ -4,7 +4,7 @@ import ParticleCanvas from './ParticleCanvas.jsx'
 function StartPage({ onStartClick, onSkipClick }) {
     return (
         <div>
-            <ParticleCanvas />
+            <ParticleCanvas cursorParticles={true} />
             <div id='StartPage'>
                 <h1 id='Title'>safia ezzahir</h1>
                 <p id="Desc">a personal website inspired by text-adventure video games</p>

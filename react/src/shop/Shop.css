@@ -3,6 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1;
 }
 
 #RightSection {
@@ -81,8 +82,6 @@ ul>button:hover {
     width: auto;
     padding: 5px;
 }
-
-/* change colours */
 
 #DownloadCV {
     background-color: black;

@@ -6,7 +6,7 @@ import './ParticleCanvas.css';
 // spawn 20 background particles on resize, respawn when one dies
 // needs to spawn in random place, don't specify in spawn function
 
-function ParticleCanvas({ colorPalette = ['#22b64e', '#2ab4d9', '#6fe2ff', '#e99b07', '#ffc500', '#ed1c24', '#ff7289', '#ff3982'], maxParticles = 20, maxBackgroundParticles = 40 }) {
+function ParticleCanvas({ colorPalette = ['#22b64e', '#2ab4d9', '#6fe2ff', '#e99b07', '#ffc500', '#ed1c24', '#ff7289', '#ff3982'], maxParticles = 20, maxBackgroundParticles = 50, cursorParticles }) {
     // useRef keeps a value between renders without rerendering
     const CanvasRef = useRef(null);
     const ParticlesRef = useRef([]);
@@ -213,36 +213,37 @@ function ParticleCanvas({ colorPalette = ['#22b64e', '#2ab4d9', '#6fe2ff', '#e99
                 Ctx.restore();
             }
 
-            for (let i = particles.length - 1; i >= 0; i--) {
-                const p = particles[i];
-                p.age += dt;
-                if (p.age >= p.life) {
-                    particles.splice(i, 1);
-                    PoolRef.current.push(p);
-                    continue;
+            if (cursorParticles) {
+                for (let i = particles.length - 1; i >= 0; i--) {
+                    const p = particles[i];
+                    p.age += dt;
+                    if (p.age >= p.life) {
+                        particles.splice(i, 1);
+                        PoolRef.current.push(p);
+                        continue;
+                    }
+
+                    p.vx *= 0.98;
+                    p.vy *= 0.98;
+                    p.x += p.vx * (dt/16);
+                    p.y += p.vy * (dt/16) + 0.02 * (dt/16);
+                    const t = p.age / p.life;
+                    const alpha = 1 - t;
+                    const size = p.size * (1 - t * 0.8);
+
+                    Ctx.save();
+                    Ctx.beginPath();
+                    Ctx.fillStyle = p.color;
+                    Ctx.globalAlpha = alpha;
+                    Ctx.shadowColor = p.color;
+                    Ctx.shadowBlur = 10;
+
+                    Ctx.rect(p.x,p.y,size,size);
+                    Ctx.stroke();
+                    Ctx.fill();
+                    Ctx.restore();
                 }
-
-                p.vx *= 0.98;
-                p.vy *= 0.98;
-                p.x += p.vx * (dt/16);
-                p.y += p.vy * (dt/16) + 0.02 * (dt/16);
-                const t = p.age / p.life;
-                const alpha = 1 - t;
-                const size = p.size * (1 - t * 0.8);
-
-                Ctx.save();
-                Ctx.beginPath();
-                Ctx.fillStyle = p.color;
-                Ctx.globalAlpha = alpha;
-                Ctx.shadowColor = p.color;
-                Ctx.shadowBlur = 10;
-
-                Ctx.rect(p.x,p.y,size,size);
-                Ctx.stroke();
-                Ctx.fill();
-                Ctx.restore();
             }
-
             RafRef.current = requestAnimationFrame(update);
         }
 
@@ -255,7 +256,7 @@ function ParticleCanvas({ colorPalette = ['#22b64e', '#2ab4d9', '#6fe2ff', '#e99
             window.removeEventListener('touchmove', onMove);
         }
 
-    }, [colorPalette, maxParticles, maxBackgroundParticles]);
+    }, [colorPalette, maxParticles, maxBackgroundParticles, cursorParticles]);
 
 
     return (
