@@ -10,7 +10,6 @@ import TrophiesPage from './TrophiesPage';
 import WardrobePage from './WardrobePage';
 import PlantsPage from './PlantsPage';
 import FasttravelPage from './FasttravelPage';
-import PostboxPage from './PostboxPage';
 
 // if clicked on shop button - open right section
 // else - hide right section
@@ -37,10 +36,6 @@ function Page({ pagetype }){
     } else if (pagetype == 'fast travel') {
         return (
             <FasttravelPage />
-        )
-    } else if (pagetype == 'postbox') {
-        return (
-            <PostboxPage />
         )
     } else if (pagetype == 'home') {
         return (
@@ -93,11 +88,6 @@ function RightSection(){
                 <button onClick={() => changePageType('fast travel')}>
                     <img src="src/assets/medalicon.png" alt="medal icon" className='ic' />
                     <p>fast travel</p>
-                </button>
-                
-                <button onClick={() => changePageType('postbox')}>
-                    <img src="src/assets/medalicon.png" alt="medal icon" className='ic' />
-                    <p>post box</p>
                 </button>
             </ul>
 
