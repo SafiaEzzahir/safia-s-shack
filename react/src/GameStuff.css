@@ -14,6 +14,7 @@ body {
     font-weight: 500;
     font-style: normal;
     font-size: 18px;
+    text-align: start;
 }
 
 .speech-window-text {
