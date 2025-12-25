@@ -10,6 +10,31 @@
     align-items: start;
     flex-wrap: wrap;
     overflow-y: auto;
+
+    /* scrollbar styling */
+    --sb-track-color: #9C4A29;
+    --sb-thumb-color: #ca7826;
+    --sb-size: 10px;
+}
+
+.ItemsSection::-webkit-scrollbar {
+    width: var(--sb-size);
+}
+
+.ItemsSection::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 4px;
+}
+
+.ItemsSection::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 3.15px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+    .ItemsSection {
+        scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+    }
 }
 
 .ItemsText {
