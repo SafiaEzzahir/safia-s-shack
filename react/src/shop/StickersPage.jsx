@@ -24,11 +24,10 @@ function StickersPage() {
     return (
         <div className='ItemsPage'>
             <h1>STICKERS</h1>
-            <img src="./react/public/stickers/crying orpheus.jpg" alt="yhooohoo" />
             <div className='ItemsSection'>
                 {images.map((image) => (
                     <div className='Item'>
-                        <img className='ItemImage' src={'./' + image + '.jpg'} alt={'a ' + image + ' sticker'} />
+                        <img className='ItemImage' src={'./public/stickers/' + image + '.jpg'} alt={'a ' + image + ' sticker'} />
                         <p className='ItemText'>{image}</p>
                     </div>
                 ))}
