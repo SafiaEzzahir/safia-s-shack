@@ -100,6 +100,30 @@
 #TrophiesSection {
     overflow-y: auto;
     height: 250px;
+/* why is scrollbar not styling */
+    --sb-track-color: #9C4A29;
+    --sb-thumb-color: #ca7826;
+    --sb-size: 10px;
+}
+
+#TrophiesSection::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 4px;
+}
+
+#TrophiesSection::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 3.15px;
+}
+
+#TrophiesSection::-webkit-scrollbar {
+    width: var(--sb-size);
+}
+
+@supports not selector(::::-webkit-scrollbar) {
+    #TrophiesSection {
+        scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+    }
 }
 
 .Trophy>button {
@@ -112,4 +136,23 @@
 
 #TrophiesText {
     margin-bottom: 10px;
+}
+
+.TrophySkill {
+    display: flex;
+    margin-left: 70px;
+    padding: 5px 0px;
+}
+
+.TrophySkillImage {
+    width: 50px;
+    padding: 5px;
+}
+
+.TrophySkillTitle {
+    padding: 5px;
+}
+
+.TrophySkillScore {
+    padding: 5px;
 }

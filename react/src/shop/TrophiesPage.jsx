@@ -44,15 +44,15 @@ function TrophiesPage() {
                     <div className='Trophy' key={i}>
                         <button onClick={() => setWhichOneIsOpen(WhichOneIsOpen === i ? null : i)}>
                             <img className='TrophyImage' src={trophy.image} alt={trophy.title} />
-                            <p>{trophy.title}</p>
+                            <p className='TrophyTitle'>{trophy.title}</p>
                         </button>
                         {WhichOneIsOpen === i && (
                             <div className='TrophySkills'>
                                 {Object.entries(trophy.skills).map(([skill, num]) => (
                                     <div className='TrophySkill' key={skill}>
-                                        <img src={SkillIcons[skill]} alt={skill} />
-                                        <p>{skill}</p>
-                                        <p>{num}</p>
+                                        <img className='TrophySkillImage' src={SkillIcons[skill]} alt={skill} />
+                                        <p className='TrophySkillTitle'>{skill}</p>
+                                        <p className='TrophySkillScore'>{num}</p>
                                     </div>
                                 ))}
                             </div>
