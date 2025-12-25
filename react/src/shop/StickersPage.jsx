@@ -9,15 +9,13 @@ const imagesList = Object.entries(imagesModules).map(([path, url]) => {
     return { name, url };
 });
 
-if (imagesList.length === 0) console.warn('No stickers found in src/assets/stickers');
-
 function StickersPage() {
     return (
         <div className='ItemsPage'>
             <h1 className='ItemsText'>STICKERS</h1>
             <div className='ItemsSection'>
                 {imagesList.map((image) => (
-                    <div className='Item' key={image.name}>
+                    <div className='Item'>
                         <img className='ItemImage' src={image.url} alt={'a ' + image.name + ' sticker'} />
                         <p className='ItemText'>{image.name}</p>
                     </div>
