@@ -47,6 +47,7 @@ button {
     transition: background-color 0.2s ease-in;
     padding: 0px 30px;
     margin-top: 35px;
+    border-radius: 1.5px;
 }
 
 #Start:hover {
