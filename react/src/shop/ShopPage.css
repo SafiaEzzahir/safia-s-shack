@@ -14,6 +14,8 @@
 
 .ItemsText {
     color: #3f0f0f;
+    margin-bottom: 0px;
+    margin-top: 0px;
 }
 
 .Item {
@@ -59,4 +61,13 @@
 
 #HomePage>img {
     height: 200px;
+}
+
+.ItemsDesc>a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.ItemsDesc>a:hover {
+    color: #2ab4d9;
 }

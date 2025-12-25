@@ -13,6 +13,7 @@ function StickersPage() {
     return (
         <div className='ItemsPage'>
             <h1 className='ItemsText'>STICKERS</h1>
+            <p className='ItemsDesc'>most of these are from Hack Club and <a href='https://www.girlsintocoding.com'>Girls Into Coding</a> ツ</p>
             <div className='ItemsSection'>
                 {imagesList.map((image) => (
                     <div className='Item'>

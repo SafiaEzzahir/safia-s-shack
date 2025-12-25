@@ -12,6 +12,7 @@ function PlantsPage() {
     return (
         <div className='ItemsPage'>
             <h1 className='ItemsText'>PLANTS</h1>
+            <p className='ItemsDesc'>visit <a href="https://safiaezzahir.github.io/safiaezzahir-succulents/succulents.html">this website</a> to see more of my succulents!</p>
             <div className='ItemsSection'>
                 {imagesList.map((image) => (
                     <div className='Item'>
