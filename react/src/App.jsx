@@ -33,7 +33,7 @@ function App() {
     return (
 
       <div className='container'>
-        <img src="src/assets/safia3.png" alt="safia" />
+        <img src="./public/safia3.png" alt="safia" />
         <SpeechWindow current={currentStage} onFinishLevels={() => {setCurrentStage('shop'); sessionStorage.setItem("currentStage", "shop")}} />
       </div>
 

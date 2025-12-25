@@ -42,3 +42,18 @@
     padding: 5px;
     color: #3f0f0f;
 }
+
+#HomePage {
+    font-size: 28px;
+    color: #3f0f0f;
+    display: flex;
+    align-items: end;
+}
+
+#HomePage>p {
+    padding-right: 10px;
+}
+
+#HomePage>img {
+    height: 200px;
+}
