@@ -96,3 +96,20 @@
 .ItemsDesc>a:hover {
     color: #2ab4d9;
 }
+
+#TrophiesSection {
+    overflow-y: auto;
+    height: 250px;
+}
+
+.Trophy>button {
+    display: flex;
+}
+
+.TrophyImage {
+    width: 50px;
+}
+
+#TrophiesText {
+    margin-bottom: 10px;
+}
