@@ -34,15 +34,14 @@ button {
 
 #Desc {
     font-size: 20px;
-    color: #a34e2b;
+    color: #ca7826;
     margin-bottom: 20px;
     padding: none;
 }
 
 #Start {
     background-color: #ff3982;
-    padding: 5px;
-    font-size: 40px;
+    font-size: 30px;
     min-height: 100px;
     transition: background-color 0.2s ease-in;
     padding: 0px 30px;
@@ -85,5 +84,5 @@ button {
 }
 
 @keyframes ShrinkButton2 {
-    100% { font-size: 35px; }
+    100% { font-size: 25px; }
 }
