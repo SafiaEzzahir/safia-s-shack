@@ -7,12 +7,14 @@
 
 #RightSection {
     width: 500px;
-    border: 3px solid greenyellow;
+    border: 3.5px solid #6b2e1a;
+    background-color: #a34e2b;
     display: flex;
     align-items: center;
     margin-left: 20px;
-
+    border-radius: 8px;
     position: relative;
+    padding: 0px;
 }
 
 .list {
@@ -22,10 +24,12 @@
 ul {
     list-style: none;
     padding: 0px;
-    background-color: black;
-
+    background-color: #a34e2b;
+    border: 3px solid #6b2e1a;
     position: relative;
     z-index: 2;
+    height: 100%;
+    margin: 0px 0px;
 }
 
 ul>button {
@@ -33,7 +37,7 @@ ul>button {
     justify-content: space-between;
     align-items: center;
     padding: 0px;
-    width: 60px;
+    width: 70px;
     overflow: hidden;
     flex-wrap: nowrap;
     text-wrap: nowrap;
