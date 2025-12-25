@@ -106,10 +106,20 @@ function RightSection(){
     )
 }
 
+// does the cv bit work?
+function LeftSection(){
+    return (
+        <div id='LeftSection'>
+            <img src="" alt="" />
+            <a href='react/public/cv.pdf' download='safiaezzahir.pdf'>download cv</a>
+        </div>
+    )
+}
+
 function Shop(){
     return(
         <div id="shop">
-            <p>hello this is the shop</p>
+            <LeftSection />
             <RightSection />
         </div>
     )
