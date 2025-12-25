@@ -63,3 +63,32 @@ ul>button:hover {
     height: 50px;
     padding: 10px;
 }
+
+#LeftSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+#Shack {
+    height: 450px;
+    width: auto;
+    padding: 5px;
+}
+
+/* change colours */
+
+#DownloadCV {
+    background-color: black;
+    color: #ff3982;
+    padding: 5px;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: background-color 0.1s ease-in, color 0.1s ease-in;
+}
+
+#DownloadCV:hover {
+    background-color: #ff3982;
+    color: white;
+}

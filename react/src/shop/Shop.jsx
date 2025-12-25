@@ -109,8 +109,8 @@ function RightSection(){
 function LeftSection(){
     return (
         <div id='LeftSection'>
-            <img src="./public/shack.png" alt="safia's shack" />
-            <a href='./public/cv.pdf' download='safiaezzahir.pdf'>download cv</a>
+            <img id='Shack' src="./public/shack.png" alt="safia's shack" />
+            <a href='./public/cv.pdf' download='safiaezzahir.pdf' id='DownloadCV'>download cv</a>
         </div>
     )
 }
