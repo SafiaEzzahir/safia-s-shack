@@ -1,6 +1,6 @@
 import './ShopPage.css'
 
-const imagesModules = import.meta.glob('../assets/stickers/*.{png,jpg,jpeg,gif}', { eager: true, as: 'url' });
+const imagesModules = import.meta.glob('../assets/plants/*.{png,jpg,jpeg,gif}', { eager: true, as: 'url' });
 const imagesList = Object.entries(imagesModules).map(([path, url]) => {
     const parts = path.split('/');
     const filename = parts[parts.length - 1];

@@ -30,16 +30,19 @@
 }
 
 .ItemImage {
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
     aspect-ratio: 1;
     border: solid #6b2e1a 3px;
     border-radius: 6px;
+    object-fit: cover;
+    padding: 0px;
 }
 
 .ItemText {
+    margin-top: 3px;
     text-wrap: wrap;
-    padding: 5px;
+    padding: 0px;
     color: #3f0f0f;
 }
 
