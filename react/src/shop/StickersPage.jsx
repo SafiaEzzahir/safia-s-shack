@@ -23,7 +23,7 @@ const images = ['crying orpheus', 'cute lightbulb', 'girls who code clicker']
 function StickersPage() {
     return (
         <div className='ItemsPage'>
-            <h1>STICKERS</h1>
+            <h1 className='ItemsText'>STICKERS</h1>
             <div className='ItemsSection'>
                 {images.map((image) => (
                     <div className='Item'>

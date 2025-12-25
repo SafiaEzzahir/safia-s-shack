@@ -79,7 +79,7 @@ function RightSection(){
                 </button>
                 
                 <button onClick={() => changePageType('stickers')}>
-                    <img src="src/assets/stickericon.png" alt="sticker icon" className='ic' />
+                    <img src="./public/stickericon.png" alt="sticker icon" className='ic' />
                     <p>stickers</p>
                 </button>
                 

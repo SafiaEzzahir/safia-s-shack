@@ -30,6 +30,7 @@ ul {
     z-index: 2;
     height: 100%;
     margin: 0px 0px;
+    font-size: 20px;
 }
 
 ul>button {
@@ -43,7 +44,7 @@ ul>button {
     text-wrap: nowrap;
 
     background: none;
-	color: inherit;
+	color: #3f0f0f;
 	border: none;
 	font: inherit;
 	outline: inherit;
@@ -89,6 +90,7 @@ ul>button:hover {
     padding: 5px;
     border-radius: 2px;
     text-decoration: none;
+    font-size: 20px;
     transition: background-color 0.1s ease-in, color 0.1s ease-in;
 }
 
