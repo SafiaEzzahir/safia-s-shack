@@ -1,25 +1,50 @@
+import { useState } from 'react';
+
 import './ShopPage.css'
 
-const imagesModules = import.meta.glob('../assets/wardrobe/*.{png,jpg,jpeg,gif}', { eager: true, as: 'url' });
-const imagesList = Object.entries(imagesModules).map(([path, url]) => {
-    const parts = path.split('/');
-    const filename = parts[parts.length - 1];
-    const name = filename.replace(/\.(png|jpg|jpeg|gif)$/i, '');
-    return { name, url };
-});
+const ClothesList = [
+    {image: './src/assets/planticon.png', title: 'athena award hoodie 1'},
+    {image: './src/assets/stickericon.png', title: "npc safia's dress"},
+    {image: './src/assets/planticon.png', title: 'athena award hoodie 2'}
+]
+
+// rail
+// clothes on hangers (e.g. athena hoodie x2, this site dress, roulette outfit, other projects..)
+// ^^^ pixel art
+// hover moves clothes
+// button? click brings it forward and shows div of info + projects
+
+function Rail() {
+    return (
+        <p>this is the rail - a long horizontal cylinder</p>
+    )
+}
+
+function Clothes() {
+    const [WhatClothesIsOpen, setWhatClothesIsOpen] = useState(null)
+
+    function OpenClothes() {
+        console.log('clothing rn')
+    }
+
+    // we love .map(), will probably use that function here too
+    // how do we get the image to stay in the background? idk
+    return (
+        <div id='Clothes'>
+            {ClothesList.map((clothe, i) => (
+                <button className='Clothe'>
+                    <img src={clothe.image} alt={clothe.title} />
+                </button>
+            ))}
+        </div>
+    )
+}
 
 function WardrobePage() {
     return (
-        <div className='ItemsPage'>
-            <h1 className='ItemsText'>WARDROBE</h1>
-            <div className='ItemsSection'>
-                {imagesList.map((image) => (
-                    <div className='Item'>
-                        <img className='ItemImage' src={image.url} alt={'a ' + image.name + ' sticker'} />
-                        <p className='ItemText'>{image.name}</p>
-                    </div>
-                ))}
-            </div>
+        <div className='WardrobePage'>
+            <Rail />
+            <Clothes />
         </div>
     )
 }
