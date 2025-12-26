@@ -22,7 +22,7 @@ function Level1(props) {
 function Level(props) {
     return (
         <div className='speech-window'>
-            <p className='speech-window-text'>{props.text}</p>
+            <p key={props.text} className='speech-window-text'>{props.text}</p>
         </div>
     )
 }
