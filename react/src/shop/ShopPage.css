@@ -57,10 +57,16 @@
 
 #HomePage>p {
     padding-right: 10px;
+    width: 250px;
+}
+
+#HomePage>p:hover {
+    animation: HomePageAnimationtion2 1s linear 0.2s forwards;
 }
 
 #HomePage>img {
     height: 200px;
+    width: auto;
 }
 
 .ItemsDesc {
@@ -195,7 +201,20 @@
 }
 
 .HomePageAnimation {
-    color: red;
+    animation: HomePageAnimationtion 2s linear 0.8s 1;
+}
+
+@keyframes HomePageAnimationtion {
+    0% { color: inherit; }
+    33% { color: #2ab4d9; }
+    66% { color: #ffffff; }
+    100% { color: inherit; }
+}
+
+@keyframes HomePageAnimationtion2 {
+    0% { color: inherit; }
+    70% { color: #2ab4d9; }
+    100% { color: #ffffff; }
 }
 
 #PostBoxForm {
