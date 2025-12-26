@@ -4,7 +4,7 @@ import './ShopPage.css'
 
 const Trophies = [
     {image: './src/assets/medalicon.png', title: 'Hack Club Athena Award', skills: {'code': 5}},
-    {image: './src/assets/medalicon.png', title: 'WJEC Level 1 Latin Certification(A*)', skills: {'languages': 4, 'revision': 1}},
+    {image: './src/assets/medalicon.png', title: 'WJEC Level 1 Latin Certification (A*)', skills: {'languages': 4, 'revision': 1}},
     {image: './src/assets/medalicon.png', title: 'Hack Club Hackathon Organiser (Sep 2025)', skills: {'event management': 3, 'code': 1, 'debugging': 2}},
     {image: './src/assets/medalicon.png', title: 'WCSC Peer Mentor (2023-24)', skills: {'youth leadership': 4, 'advice': 2}},
     {image: './src/assets/medalicon.png', title: 'Computer Science Prefect (current)', skills: {'event management': 2, 'youth leadership': 2, 'code': 1}},
