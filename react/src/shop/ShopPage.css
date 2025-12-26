@@ -234,11 +234,12 @@
     margin: 4px;
     border-radius: 2.3px;
     border: solid 3px yellow;
+    width: 110px;
 }
 
 #PostBoxForm>textarea {
     resize: none;
-    width: 290px;
+    width: 240px;
     height: 100px;
     border-radius: 3.9px;
     border: solid 3px blue;
@@ -257,4 +258,16 @@
     display: flex;
     justify-content: space-evenly;
     padding: 5px;
+}
+
+#PostBoxFormContainer {
+    display: flex;
+    align-items: center;
+}
+
+#PostBoxImage {
+    padding: 5px;
+    width: 100px;
+    height: auto;
+    margin-bottom: 70px;
 }

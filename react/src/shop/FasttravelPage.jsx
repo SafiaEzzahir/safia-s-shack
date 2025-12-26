@@ -6,7 +6,7 @@ import medalicon from '../assets/icons/medalicon.png'
 function PostBox() {
     return (
         <div className="PostBox">
-            <p>this is the post box</p>
+            <p>POST BOX</p>
             <PostBoxForm />
         </div>
     )
