@@ -1,5 +1,10 @@
 TO DO
+    - fix typing animation for text adventure
+    - add hover anim for my shack
     - make contact form (postbox)
+        - clear form when (successfully) submitted
+        - add form prompts
+        - style form, esp padding
     - change colour of skils/achievements text
         - (put it in fast travel) 🟠
         - figure out how to design the hangers and stuff - it's gunna be quite cool!! 🟠
