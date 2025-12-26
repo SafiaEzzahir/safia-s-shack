@@ -24,8 +24,10 @@ body {
     white-space: nowrap;
 
     animation: 
-        typing 8s
+        typing 8s linear
     ;
+
+    font-size: 25px;
 }
 
 @keyframes typing {
