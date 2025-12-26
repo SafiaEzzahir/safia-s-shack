@@ -178,7 +178,39 @@
     transition: transform 0.4s ease, filter 0.3s ease;
 }
 
+/* customise the hover effect more */
 .Clothe:hover {
     transform: translateZ(80px) translateY(-10px) scale(1.05);
     filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0,4));
+}
+
+#FasttravelPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.FasttravelLink {
+    display: flex;
+    align-items: center;
+}
+
+.FasttravelLinkIcon {
+    width: 20px;
+    padding: 5px;
+}
+
+.FasttravelLinkLink {
+    color: inherit;
+    /* remember to add scroll styling if necessary */
+    overflow-y: auto;
+}
+
+.FasttravelLinkLink:hover {
+    color: #2ab4d9;
+}
+
+#FasttravelText {
+    color: #3f0f0f;
+    margin-top: 0px;
 }
