@@ -71,17 +71,17 @@ function RightSection(){
             <ul className='list'>
 
                 <button onClick={() => changePageType('trophies')}>
-                    <img src="/assets/icons/medalicon.png" alt="medal icon" className='ic' />
+                    <img src="./src/assets/icons/medalicon.png" alt="medal icon" className='ic' />
                     <p>trophies</p>
                 </button>
 
                 <button onClick={() => changePageType('wardrobe')}>
-                    <img src="/assets/icons/wardrobeicon.png" alt="dress hanging on a hanger icon" className='ic' />
+                    <img src="./src/assets/icons/wardrobeicon.png" alt="dress hanging on a hanger icon" className='ic' />
                     <p>wardrobe</p>
                 </button>
                 
                 <button onClick={() => changePageType('stickers')}>
-                    <img src="/assets/icons/stickericonv.png" alt="sticker icon" className='ic' />
+                    <img src="./src/assets/icons/stickericonv.png" alt="sticker icon" className='ic' />
                     <p>stickers</p>
                 </button>
                 
@@ -91,7 +91,7 @@ function RightSection(){
                 </button>
                 
                 <button onClick={() => changePageType('fast travel')}>
-                    <img src="/assets/icons/fasttravelicon.png" alt="medal icon" className='ic' />
+                    <img src="./src/assets/icons/fasttravelicon.png" alt="medal icon" className='ic' />
                     <p>fast travel</p>
                 </button>
             </ul>
@@ -107,7 +107,7 @@ function LeftSection({ ClickFunction }){
     return (
         <div id='LeftSection'>
             <button onClick={ClickFunction}>
-                <img id='Shack' src="/assets/safia+shack/shack.png" alt="safia's shack" />
+                <img id='Shack' src="./src/assets/safia+shack/shack.png" alt="safia's shack" />
             </button>
             <a href='./src/assets/cv.pdf' download='safiaezzahir.pdf' id='DownloadCV'>download cv</a>
         </div>
