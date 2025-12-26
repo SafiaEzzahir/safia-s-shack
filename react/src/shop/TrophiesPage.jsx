@@ -39,7 +39,7 @@ function TrophiesPage() {
     return (
         <div id='TrophiesPage'>
             <h1 className='ItemsText' id='TrophiesText'>TROPHIES</h1>
-            <div id="TrophiesSection">
+            <div id="TrophiesSection" className='ScrollSection'>
                 {Trophies.map((trophy, i) => (
                     <div className='Trophy' key={i}>
                         <button onClick={() => setWhichOneIsOpen(WhichOneIsOpen === i ? null : i)}>

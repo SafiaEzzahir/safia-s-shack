@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import './ShopPage.css'
+
 function PostBoxForm() {
     const [result, setResult] = useState('');
 
@@ -30,10 +32,12 @@ function PostBoxForm() {
     };
 
     return (
-        <form onSubmit={onSubmit}>
-            <input type="text" name='name' value={NameInput} onChange={(e) => setNameInput(e.target.value)} placeholder='your name ;)' required/>
-            <input type="email" name='email' value={EmailInput} onChange={(e) => setEmailInput(e.target.value)} placeholder='your.email@example.com' required/>
-            <textarea name="message" value={MessageInput} onChange={(e) => setMessageInput(e.target.value)} required></textarea>
+        <form onSubmit={onSubmit} id='PostBoxForm'>
+            <div id='PostBoxFormTextInputs'>
+                <input type="text" name='name' value={NameInput} onChange={(e) => setNameInput(e.target.value)} placeholder='your name ;)' required/>
+                <input type="email" name='email' value={EmailInput} onChange={(e) => setEmailInput(e.target.value)} placeholder='your.email@example.com' required/>
+            </div>
+            <textarea name="message" value={MessageInput} onChange={(e) => setMessageInput(e.target.value)} placeholder='your message - what do you want to ask me/yap about?' required></textarea>
             <button type='submit'>submit</button>
             <p>{result}</p>
         </form>

@@ -43,7 +43,7 @@ ul>button {
     justify-content: space-between;
     align-items: center;
     padding: 0px;
-    width: 70px;
+    width: 68px;
     overflow: hidden;
     flex-wrap: nowrap;
     text-wrap: nowrap;
@@ -85,6 +85,11 @@ ul>button:hover {
     height: 450px;
     width: auto;
     padding: 5px;
+}
+
+/* tilt on z index somehow */
+#Shack:hover {
+    color: inherit;
 }
 
 #DownloadCV {
