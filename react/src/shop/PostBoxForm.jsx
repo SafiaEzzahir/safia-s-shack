@@ -14,8 +14,8 @@ function PostBoxForm() {
         });
 
         const data = await response.json();
-        // change result message <3
-        setResult(data.success ? "success!" : "error");
+        
+        setResult(data.success ? "success! i'll get to your message soon =)" : "error =( you might need to try again");
     };
 
     return (
