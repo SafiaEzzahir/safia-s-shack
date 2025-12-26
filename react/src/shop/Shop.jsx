@@ -109,7 +109,7 @@ function LeftSection({ ClickFunction }){
             <button onClick={ClickFunction}>
                 <img id='Shack' src="./src/assets/safia+shack/shack.png" alt="safia's shack" />
             </button>
-            <a href='./public/cv.pdf' download='safiaezzahir.pdf' id='DownloadCV'>download cv</a>
+            <a href='./src/assets/cv.pdf' download='safiaezzahir.pdf' id='DownloadCV'>download cv</a>
         </div>
     )
 }
