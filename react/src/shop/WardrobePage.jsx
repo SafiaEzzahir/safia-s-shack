@@ -3,9 +3,9 @@ import { useState } from 'react';
 import './ShopPage.css'
 
 const ClothesList = [
-    {image: 'assets/icons/planticon.png', title: 'athena award hoodie 1'},
-    {image: 'assets/icons/stickericon.png', title: "npc safia's dress"},
-    {image: 'assets/icons/planticon.png', title: 'athena award hoodie 2'}
+    {image: './src/assets/icons/planticon.png', title: 'athena award hoodie 1'},
+    {image: './src/assets/icons/stickericon.png', title: "npc safia's dress"},
+    {image: './src/assets/icons/planticon.png', title: 'athena award hoodie 2'}
 ]
 
 // rail
