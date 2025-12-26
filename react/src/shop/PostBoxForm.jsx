@@ -1,0 +1,30 @@
+import { useState } from 'react';
+
+function PostBoxForm() {
+    const [result, setResult] = useState('');
+
+    const onSubmit = async (event) => {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        formData.append('access_key', '9e10d1b2-0429-46a9-a310-a2026f524116');
+
+        const response = await fetch('https://api.web3forms.com/submit', {
+            method: "POST",
+            body: formData
+        });
+
+        const data = await response.json();
+        // change result message <3
+        setResult(data.success ? "success!" : "error");
+    };
+
+    return (
+        <form onSubmit={onSubmit}>
+            <input type="text" name='name' required/>
+            <input type="email" name='email' required/>
+            <textarea name="message" required></textarea>
+            <button type='submit'>submit</button>
+            <p>{result}</p>
+        </form>
+    );
+}
