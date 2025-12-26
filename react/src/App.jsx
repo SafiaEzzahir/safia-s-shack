@@ -36,7 +36,7 @@ function App() {
       <div>
         <ParticleCanvas />
         <div className='container'>
-          <img className='LowerZIndex' src="./src/assets/safia+shack/safia3.png" alt="safia" />
+          <img className='LowerZIndex' src="/src/assets/safia+shack/safia3.png" alt="safia" />
           <SpeechWindow current={currentStage} onFinishLevels={() => {setCurrentStage('shop'); sessionStorage.setItem("currentStage", "shop")}} />
         </div>
       </div>
