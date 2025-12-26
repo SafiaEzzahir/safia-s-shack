@@ -28,3 +28,5 @@ function PostBoxForm() {
         </form>
     );
 }
+
+export default PostBoxForm;

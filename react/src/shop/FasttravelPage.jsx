@@ -1,9 +1,12 @@
 import './ShopPage.css';
 
+import PostBoxForm from './PostBoxForm.jsx'
+
 function PostBox() {
     return (
         <div className="PostBox">
             <p>this is the post box</p>
+            <PostBoxForm />
         </div>
     )
 }
