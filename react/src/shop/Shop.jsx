@@ -86,7 +86,7 @@ function RightSection(){
                 </button>
                 
                 <button onClick={() => changePageType('plants')}>
-                    <img src="src/assets/icons/planticon.png" alt="plant in a pot icon" className='ic' />
+                    <img src="/assets/icons/planticon.png" alt="plant in a pot icon" className='ic' />
                     <p>plants</p>
                 </button>
                 
