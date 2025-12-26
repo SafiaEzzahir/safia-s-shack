@@ -88,6 +88,10 @@
     height: 200px;
 }
 
+.ItemsDesc {
+    color: #ffc500;
+}
+
 .ItemsDesc>a {
     color: inherit;
     text-decoration: underline;
