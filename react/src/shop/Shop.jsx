@@ -9,6 +9,13 @@ import TrophiesPage from './TrophiesPage';
 import WardrobePage from './WardrobePage';
 import PlantsPage from './PlantsPage';
 import FasttravelPage from './FasttravelPage';
+import medalicon from '../assets/icons/medalicon.png';
+import wardrobeicon from '../assets/icons/wardrobeicon.png';
+import stickericonv from '../assets/icons/stickericonv.png';
+import planticon from '../assets/icons/planticon.png';
+import fasttravelicon from '../assets/icons/fasttravelicon.png';
+import shackImg from '../assets/safia+shack/shack.png';
+import cvPdf from '../assets/cv.pdf';
 
 // if clicked on shop button - open right section
 // else - hide right section
@@ -71,27 +78,27 @@ function RightSection(){
             <ul className='list'>
 
                 <button onClick={() => changePageType('trophies')}>
-                    <img src="/src/assets/icons/medalicon.png" alt="medal icon" className='ic' />
+                    <img src={medalicon} alt="medal icon" className='ic' />
                     <p>trophies</p>
                 </button>
 
                 <button onClick={() => changePageType('wardrobe')}>
-                    <img src="/src/assets/icons/wardrobeicon.png" alt="dress hanging on a hanger icon" className='ic' />
+                    <img src={wardrobeicon} alt="dress hanging on a hanger icon" className='ic' />
                     <p>wardrobe</p>
                 </button>
                 
                 <button onClick={() => changePageType('stickers')}>
-                    <img src="/src/assets/icons/stickericonv.png" alt="sticker icon" className='ic' />
+                    <img src={stickericonv} alt="sticker icon" className='ic' />
                     <p>stickers</p>
                 </button>
                 
                 <button onClick={() => changePageType('plants')}>
-                    <img src="/assets/icons/planticon.png" alt="plant in a pot icon" className='ic' />
+                    <img src={planticon} alt="plant in a pot icon" className='ic' />
                     <p>plants</p>
                 </button>
                 
                 <button onClick={() => changePageType('fast travel')}>
-                    <img src="/src/assets/icons/fasttravelicon.png" alt="medal icon" className='ic' />
+                    <img src={fasttravelicon} alt="medal icon" className='ic' />
                     <p>fast travel</p>
                 </button>
             </ul>
@@ -107,9 +114,9 @@ function LeftSection({ ClickFunction }){
     return (
         <div id='LeftSection'>
             <button onClick={ClickFunction}>
-                <img id='Shack' src="/src/assets/safia+shack/shack.png" alt="safia's shack" />
+                <img id='Shack' src={shackImg} alt="safia's shack" />
             </button>
-            <a href='/src/assets/cv.pdf' download='safiaezzahir.pdf' id='DownloadCV'>download cv</a>
+            <a href={cvPdf} download='safiaezzahir.pdf' id='DownloadCV'>download cv</a>
         </div>
     )
 }

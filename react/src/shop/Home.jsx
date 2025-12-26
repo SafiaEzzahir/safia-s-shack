@@ -1,4 +1,5 @@
 import './ShopPage.css'
+import smilingsafia from '../assets/safia+shack/smilingsafia.png'
 
 function HomePage({ opened }) {
     return (
@@ -7,7 +8,7 @@ function HomePage({ opened }) {
                 so this is my shack! here, you can view my collections of trinkets and current projects. <br></br><br></br>
                 head to the "fast travel" section to see where you can go, or drop a message in the post box if you have any questions!
             </p>
-            <img src="/src/assets/safia+shack/smilingsafia.png" alt="safia" />
+            <img src={smilingsafia} alt="safia" />
         </div>
     )
 }

@@ -1,6 +1,7 @@
 import './ShopPage.css';
 
 import PostBoxForm from './PostBoxForm.jsx'
+import medalicon from '../assets/icons/medalicon.png'
 
 function PostBox() {
     return (
@@ -22,15 +23,15 @@ function FasttravelPage() {
             <div id='FasttravelSection' className='ScrollSection'>
                 <div id="FasttravelLinks">
                     <div className="FasttravelLink" id="Github">
-                        <img className='FasttravelLinkIcon' src="/src/assets/icons/medalicon.png" alt="github icon" />
+                        <img className='FasttravelLinkIcon' src={medalicon} alt="github icon" />
                         <a className='FasttravelLinkLink' href="https://github.com/SafiaEzzahir">github.com/SafiaEzzahir</a>
                     </div>
                     <div className="FasttravelLink" id="SchoolEmail">
-                        <img className='FasttravelLinkIcon' src="/src/assets/icons/medalicon.png" alt="the winston churchill school icon" />
+                        <img className='FasttravelLinkIcon' src={medalicon} alt="the winston churchill school icon" />
                         <a className='FasttravelLinkLink' href="mailto:ezzahirs22@student.wcsc.org.uk">ezzahirs22@student.wcsc.org.uk</a>
                     </div>
                     <div className="FasttravelLink" id="Email">
-                        <img className='FasttravelLinkIcon' src="/src/assets/icons/medalicon.png" alt="microsoft outlook icon" />
+                        <img className='FasttravelLinkIcon' src={medalicon} alt="microsoft outlook icon" />
                         <a className='FasttravelLinkLink' href="mailto:safia.ezzahir@hotmail.com">safia.ezzahir@hotmail.com</a>
                     </div>
                 </div>

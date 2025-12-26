@@ -1,11 +1,13 @@
 import { useState } from 'react';
 
 import './ShopPage.css'
+import planticon from '../assets/icons/planticon.png'
+import stickericon from '../assets/icons/stickericon.png'
 
 const ClothesList = [
-    {image: '/src/assets/icons/planticon.png', title: 'athena award hoodie 1'},
-    {image: '/src/assets/icons/stickericon.png', title: "npc safia's dress"},
-    {image: '/src/assets/icons/planticon.png', title: 'athena award hoodie 2'}
+    {image: planticon, title: 'athena award hoodie 1'},
+    {image: stickericon, title: "npc safia's dress"},
+    {image: planticon, title: 'athena award hoodie 2'}
 ]
 
 // rail

@@ -6,6 +6,7 @@ import SpeechWindow from './GameStuff.jsx'
 import StartPage from './StartPage.jsx'
 
 import ParticleCanvas from './ParticleCanvas.jsx'
+import safia3 from './assets/safia+shack/safia3.png'
 
 function App() {
   const [currentStage, setCurrentStage] = useState('');
@@ -36,7 +37,7 @@ function App() {
       <div>
         <ParticleCanvas />
         <div className='container'>
-          <img className='LowerZIndex' src="/src/assets/safia+shack/safia3.png" alt="safia" />
+          <img className='LowerZIndex' src={safia3} alt="safia" />
           <SpeechWindow current={currentStage} onFinishLevels={() => {setCurrentStage('shop'); sessionStorage.setItem("currentStage", "shop")}} />
         </div>
       </div>
