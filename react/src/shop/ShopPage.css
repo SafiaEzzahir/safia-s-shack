@@ -121,10 +121,20 @@
     margin-bottom: 10px;
 }
 
+.TrophySkillTexts {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+}
+
+.TrophyTitle {
+    margin-bottom: 0px;
+}
+
 .TrophySkill {
     display: flex;
     margin-left: 70px;
-    padding: 5px 0px;
+    padding: 0px 0px;
 }
 
 .TrophySkillImage {

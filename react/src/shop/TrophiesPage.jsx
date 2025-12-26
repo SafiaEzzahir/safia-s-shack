@@ -54,8 +54,10 @@ function TrophiesPage() {
                                 {Object.entries(trophy.skills).map(([skill, num]) => (
                                     <div className='TrophySkill' key={skill}>
                                         <img className='TrophySkillImage' src={SkillIcons[skill]} alt={skill} />
-                                        <p className='TrophySkillTitle'>{skill}</p>
-                                        <p className='TrophySkillScore'>{num}</p>
+                                        <div className='TrophySkillTexts'>
+                                            <p className='TrophySkillTitle'>{skill}</p>
+                                            <p className='TrophySkillScore'>+ {num}</p>
+                                        </div>
                                     </div>
                                 ))}
                             </div>
