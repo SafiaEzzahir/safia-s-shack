@@ -12,7 +12,7 @@ const end = "end"
 
 function Level1(props) {
     return (
-        <div className="speech-window">
+        <div className="speech-window LowerZIndex">
                 <p className='speech-window-text'>{props.visited}</p>
             </div>
     )
@@ -21,7 +21,7 @@ function Level1(props) {
 // level template
 function Level(props) {
     return (
-        <div className='speech-window'>
+        <div className='speech-window LowerZIndex'>
             <p key={props.text} className='speech-window-text'>{props.text}</p>
         </div>
     )

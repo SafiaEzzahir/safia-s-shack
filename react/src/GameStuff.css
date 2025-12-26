@@ -15,6 +15,7 @@ body {
     font-style: normal;
     font-size: 18px;
     text-align: start;
+    background-color: black;
 }
 
 .speech-window-text {
@@ -33,4 +34,8 @@ body {
 @keyframes typing {
     from { width: 0;}
     to { width: 100%;}
+}
+
+.LowerZIndex {
+    z-index: 3;
 }

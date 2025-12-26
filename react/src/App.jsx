@@ -5,6 +5,8 @@ import Shop from './shop/Shop.jsx'
 import SpeechWindow from './GameStuff.jsx'
 import StartPage from './StartPage.jsx'
 
+import ParticleCanvas from './ParticleCanvas.jsx'
+
 function App() {
   const [currentStage, setCurrentStage] = useState('');
 
@@ -31,10 +33,12 @@ function App() {
   } else if (currentStage === 'intro'){
 
     return (
-
-      <div className='container'>
-        <img src="./public/safia3.png" alt="safia" />
-        <SpeechWindow current={currentStage} onFinishLevels={() => {setCurrentStage('shop'); sessionStorage.setItem("currentStage", "shop")}} />
+      <div>
+        <ParticleCanvas />
+        <div className='container'>
+          <img className='LowerZIndex' src="./public/safia3.png" alt="safia" />
+          <SpeechWindow current={currentStage} onFinishLevels={() => {setCurrentStage('shop'); sessionStorage.setItem("currentStage", "shop")}} />
+        </div>
       </div>
 
     );
