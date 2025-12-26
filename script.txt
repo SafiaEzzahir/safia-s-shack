@@ -2,6 +2,8 @@ TO DO
     - add hover anim for my shack 
     - animation for Home section if not already opened ✅
         - design animation 
+    
+    - add icon to website
 
         - add form prompts ✅
         - style form, esp padding 🟡
