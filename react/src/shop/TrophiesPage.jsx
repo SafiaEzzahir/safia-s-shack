@@ -3,25 +3,25 @@ import { useState } from 'react';
 import './ShopPage.css'
 
 const Trophies = [
-    {image: './src/assets/medalicon.png', title: 'Hack Club Athena Award', skills: {'code': 5}},
-    {image: './src/assets/medalicon.png', title: 'WJEC Level 1 Latin Certification (A*)', skills: {'languages': 4, 'revision': 1}},
-    {image: './src/assets/medalicon.png', title: 'Hack Club Hackathon Organiser (Sep 2025)', skills: {'event management': 3, 'code': 1, 'debugging': 2}},
-    {image: './src/assets/medalicon.png', title: 'WCSC Peer Mentor (2023-24)', skills: {'youth leadership': 4, 'advice': 2}},
-    {image: './src/assets/medalicon.png', title: 'Computer Science Prefect (current)', skills: {'event management': 2, 'youth leadership': 2, 'code': 1}},
-    {image: './src/assets/medalicon.png', title: 'Girls Into Coding Guest Speaker', skills: {'public speaking': 4, 'youth leadership': 2}},
-    {image: './src/assets/medalicon.png', title: 'Girls Into Coding Assistant Mentor (2024-current)', skills: {'youth leadership': 5, 'code': 1, 'debugging': 3}},
-    {image: './src/assets/medalicon.png', title: 'Coding Club Leader', skills: {'code': 2, 'debugging': 4, 'youth leadership': 4}}
+    {image: './src/assets/icons/medalicon.png', title: 'Hack Club Athena Award', skills: {'code': 5}},
+    {image: './src/assets/icons/medalicon.png', title: 'WJEC Level 1 Latin Certification (A*)', skills: {'languages': 4, 'revision': 1}},
+    {image: './src/assets/icons/medalicon.png', title: 'Hack Club Hackathon Organiser (Sep 2025)', skills: {'event management': 3, 'code': 1, 'debugging': 2}},
+    {image: './src/assets/icons/medalicon.png', title: 'WCSC Peer Mentor (2023-24)', skills: {'youth leadership': 4, 'advice': 2}},
+    {image: './src/assets/icons/medalicon.png', title: 'Computer Science Prefect (current)', skills: {'event management': 2, 'youth leadership': 2, 'code': 1}},
+    {image: './src/assets/icons/medalicon.png', title: 'Girls Into Coding Guest Speaker', skills: {'public speaking': 4, 'youth leadership': 2}},
+    {image: './src/assets/icons/medalicon.png', title: 'Girls Into Coding Assistant Mentor (2024-current)', skills: {'youth leadership': 5, 'code': 1, 'debugging': 3}},
+    {image: './src/assets/icons/medalicon.png', title: 'Coding Club Leader', skills: {'code': 2, 'debugging': 4, 'youth leadership': 4}}
 ]
 
 const SkillIcons = {
-    'code': './src/assets/planticon.png',
-    'languages': './src/assets/planticon.png',
-    'revision': './src/assets/planticon.png',
-    'event management': './src/assets/planticon.png',
-    'debugging': './src/assets/planticon.png',
-    'youth leadership': './src/assets/planticon.png',
-    'public speaking': './src/assets/planticon.png',
-    'advice': './src/assets/wardrobeicon.png'
+    'code': './src/assets/icons/planticon.png',
+    'languages': './src/assets/icons/planticon.png',
+    'revision': './src/assets/icons/planticon.png',
+    'event management': './src/assets/icons/planticon.png',
+    'debugging': './src/assets/icons/planticon.png',
+    'youth leadership': './src/assets/icons/planticon.png',
+    'public speaking': './src/assets/icons/planticon.png',
+    'advice': './src/assets/icons/wardrobeicon.png'
 }
 
 // can't put an if in there

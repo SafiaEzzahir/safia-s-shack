@@ -71,27 +71,27 @@ function RightSection(){
             <ul className='list'>
 
                 <button onClick={() => changePageType('trophies')}>
-                    <img src="src/assets/medalicon.png" alt="medal icon" className='ic' />
+                    <img src="./src/assets/icons/medalicon.png" alt="medal icon" className='ic' />
                     <p>trophies</p>
                 </button>
 
                 <button onClick={() => changePageType('wardrobe')}>
-                    <img src="src/assets/wardrobeicon.png" alt="dress hanging on a hanger icon" className='ic' />
+                    <img src="./src/assets/icons/wardrobeicon.png" alt="dress hanging on a hanger icon" className='ic' />
                     <p>wardrobe</p>
                 </button>
                 
                 <button onClick={() => changePageType('stickers')}>
-                    <img src="./src/assets/stickericonv.png" alt="sticker icon" className='ic' />
+                    <img src="./src/assets/icons/stickericonv.png" alt="sticker icon" className='ic' />
                     <p>stickers</p>
                 </button>
                 
                 <button onClick={() => changePageType('plants')}>
-                    <img src="src/assets/planticon.png" alt="plant in a pot icon" className='ic' />
+                    <img src="src/assets/icons/planticon.png" alt="plant in a pot icon" className='ic' />
                     <p>plants</p>
                 </button>
                 
                 <button onClick={() => changePageType('fast travel')}>
-                    <img src="src/assets/fasttravelicon.png" alt="medal icon" className='ic' />
+                    <img src="./src/assets/icons/fasttravelicon.png" alt="medal icon" className='ic' />
                     <p>fast travel</p>
                 </button>
             </ul>
@@ -107,7 +107,7 @@ function LeftSection({ ClickFunction }){
     return (
         <div id='LeftSection'>
             <button onClick={ClickFunction}>
-                <img id='Shack' src="./public/shack.png" alt="safia's shack" />
+                <img id='Shack' src="./src/assets/safia+shack/shack.png" alt="safia's shack" />
             </button>
             <a href='./public/cv.pdf' download='safiaezzahir.pdf' id='DownloadCV'>download cv</a>
         </div>
