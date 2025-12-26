@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useState } from 'react';
 import './Shop.css';
 
@@ -38,8 +37,14 @@ function Page({ pagetype }){
             <FasttravelPage />
         )
     } else if (pagetype == 'home') {
+        let HomeOpened = sessionStorage.getItem('homeopened')
+        if (!HomeOpened) {
+            HomeOpened = false
+            sessionStorage.setItem('homeopened', true)
+        };
+
         return (
-            <HomePage />
+            <HomePage opened={HomeOpened} />
         )
     } else {
         return (
