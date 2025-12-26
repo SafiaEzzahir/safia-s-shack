@@ -1,7 +1,16 @@
 { 
-    "2": "Hey! You just clicked! You're already getting the hang of this.",
-    "3": "Just make sure you listen to everything I say first.",
-    "4": "Please?",
-    "5": "",
-    "end": "5"
+    "2": "wait, i'm getting ahead of myself.",
+    "3": "just make sure you listen to everything i say first.",
+    "4": "after all, you're here to find my hidden treasure, aren't you?",
+    "5": "just kidding!",
+    "6": "i don't have any treasure, i spent it all on food.",
+    "7": "anyways!",
+    "8": "here's a bit about me:",
+    "9": "i'm safia (obviously), an optimistic villager who specialises in python and web design.",
+    "10": "i began my quest at a young age through girls into coding.",
+    "11": "now i'm in the hack club guild, where i train to become the ultimate master hacker.",
+    "12": "(maybe one day)",
+    "13": "but for now, i live in a little shack, and talk to passers-by - like you!",
+    "14": "",
+    "end": "14"
 }

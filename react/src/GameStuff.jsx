@@ -115,9 +115,9 @@ function SpeechWindow({ onFinishLevels }) {
         var visitedstr = 'error';
         // determine visited string from state set during load
         if (visited) {
-            visitedstr = "Welcome back, adventurer. I presume you know what you're looking for?";
+            visitedstr = "Welcome back, adventurer. i presume you know what you're looking for?";
         } else {
-            visitedstr = "Welcome, adventurer. Let me give you a tour of my shop!";
+            visitedstr = "welcome, adventurer. i'm sure you've heard a lot about me ;)";
         }
 
         return (
