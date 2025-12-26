@@ -81,15 +81,23 @@ ul>button:hover {
     align-items: center;
 }
 
-#Shack {
-    height: 450px;
-    width: auto;
-    padding: 5px;
+#ShackButton {
+    width: 455px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* tilt on z index somehow */
+#Shack {
+    height: auto;
+    width: 450px;
+    padding: 5px;
+    transition: width 0.4s;
+}
+
 #Shack:hover {
-    color: inherit;
+    width: 420px;
 }
 
 #DownloadCV {

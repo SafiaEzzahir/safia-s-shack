@@ -113,7 +113,7 @@ function RightSection(){
 function LeftSection({ ClickFunction }){
     return (
         <div id='LeftSection'>
-            <button onClick={ClickFunction}>
+            <button id='ShackButton' onClick={ClickFunction}>
                 <img id='Shack' src={shackImg} alt="safia's shack" />
             </button>
             <a href={cvPdf} download='safiaezzahir.pdf' id='DownloadCV'>download cv</a>
