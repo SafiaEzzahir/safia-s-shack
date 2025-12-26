@@ -81,7 +81,7 @@ function RightSection(){
                 </button>
                 
                 <button onClick={() => changePageType('stickers')}>
-                    <img src="./public/stickericon.png" alt="sticker icon" className='ic' />
+                    <img src="./src/assets/stickericonv.png" alt="sticker icon" className='ic' />
                     <p>stickers</p>
                 </button>
                 
@@ -91,7 +91,7 @@ function RightSection(){
                 </button>
                 
                 <button onClick={() => changePageType('fast travel')}>
-                    <img src="src/assets/medalicon.png" alt="medal icon" className='ic' />
+                    <img src="src/assets/fasttravelicon.png" alt="medal icon" className='ic' />
                     <p>fast travel</p>
                 </button>
             </ul>
