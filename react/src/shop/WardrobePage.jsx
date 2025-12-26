@@ -32,7 +32,7 @@ function Clothes() {
     return (
         <div id='Clothes'>
             {ClothesList.map((clothe, i) => (
-                <button className='Clothe'>
+                <button className='Clothe' key={i} onClick={() => console.log(i)}>
                     <img src={clothe.image} alt={clothe.title} />
                 </button>
             ))}

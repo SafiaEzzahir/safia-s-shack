@@ -160,3 +160,16 @@
 .TrophySkillScore {
     padding: 5px;
 }
+
+#Clothes {
+    display: flex;
+    justify-content: start;
+}
+
+/* make custom spacing to look more natural 
+    we could just squish the buttons together, how would it work for hover though?
+*/
+
+.Clothe {
+    width: 40px;
+}
