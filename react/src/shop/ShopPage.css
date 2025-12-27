@@ -123,6 +123,10 @@
     width: 50px;
 }
 
+#TrophiesSection {
+    font-size: 20px;
+}
+
 #TrophiesText {
     margin-bottom: 10px;
 }
@@ -139,12 +143,14 @@
 
 .TrophySkill {
     display: flex;
+    align-items: center;
     margin-left: 70px;
     padding: 0px 0px;
 }
 
 .TrophySkillImage {
-    width: 50px;
+    width: 35px;
+    height: 35px;
     padding: 5px;
 }
 
