@@ -96,9 +96,11 @@ function SpeechWindow({ onFinishLevels }) {
 
                 // compute next level deterministically (no module-level state) - bruh what does this mean did i even write that
                 if (prevLevel === 1) {
-                    return visited ? levels[normalstart] : 2;
+                    return visited ? Number(levels[normalstart]) : 2;
                 }
-                return prevLevel + 1;
+                const next = Number(prevLevel) + 1;
+                console.log(levels[String(next)])
+                return next;
             });
         };
 
