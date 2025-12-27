@@ -4,7 +4,6 @@ TO DO
         - design clothes (pixel art)
         - click to expand
 
-        - change post box form placeholder color
         - figure out how to design the hangers and stuff - it's gunna be quite cool!! 
 
 1. a. welcome, adventurer!
@@ -21,6 +20,7 @@ to do:
 
  ---- D O N E ----
 
+        - change post box form placeholder color ✅
         - design skill icons ✅
  - make shop page ✅
     - fast travel (links) ✅
