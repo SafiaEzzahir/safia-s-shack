@@ -1,6 +1,6 @@
 TO DO
         - figure out how to design the hangers and stuff - it's gunna be quite cool!! 
-        - design skill icons 🟡
+        - design skill icons ✅
 
 1. a. welcome, adventurer!
     - save not visited, give tutorial
@@ -13,25 +13,24 @@ TO DO
 to do:
 
  - finish tutorial levels
- - make shop page  
 
  shop ideas
     - fast travel (links) 🟡
         - github
         - linky
         - codingames
-    - wardrobe 🟡
-    - post box (contact me) 🟡
-        - email
-        - contact form
-        - char walking to post box after 
-    - download resume button ("download all items" or something like that)
-    - stickersss!!!
-        - ^^^ needs to be updatable (in fact everything does)
-        - for now keep in html, but then put on json file - levels.json or another
+        - pixilart
+    - wardrobe 
 
  ---- D O N E ----
 
+ - make shop page ✅
+    - post box (contact me) ✅
+        - email ✅
+        - contact form ✅
+    - download resume button ("download all items" or something like that) ✅
+    - stickersss!!! ✅
+        - ^^^ needs to be updatable (in fact everything does) ✅
 0. NEED A COOL START PAGE
  - in the style of a video game start screen ✅
     🎨 background art - do we need any? ✅
