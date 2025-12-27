@@ -3,7 +3,16 @@ import { useEffect } from 'react'
 import { useRef } from 'react'
 import './GameStuff.css'
 
-const end = "end"
+const tutorialend = "tutorialend"
+const normalend = "normalend"
+var end = null
+const normalstart = "normalstart"
+
+// if visited and current level is level 1 and you've just clicked,
+// nextlevel is normalstartlevel
+
+// FIX UNDEFINED
+
 
 //                        |
 // wtf is happening here \|/    ok girlie basically it's using fetch API <3 
@@ -87,7 +96,7 @@ function SpeechWindow({ onFinishLevels }) {
 
                 // compute next level deterministically (no module-level state) - bruh what does this mean did i even write that
                 if (prevLevel === 1) {
-                    return visited ? 3 : 2;
+                    return visited ? levels[normalstart] : 2;
                 }
                 return prevLevel + 1;
             });
@@ -116,8 +125,10 @@ function SpeechWindow({ onFinishLevels }) {
         var visitedstr = 'error';
         // determine visited string from state set during load
         if (visited) {
+            end = normalend;
             visitedstr = "Welcome back, adventurer. i presume you know what you're looking for?";
         } else {
+            end = tutorialend;
             visitedstr = "welcome, adventurer. i'm sure you've heard a lot about me ;)";
         }
 
