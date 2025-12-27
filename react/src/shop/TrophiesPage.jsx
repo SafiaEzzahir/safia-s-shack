@@ -46,6 +46,7 @@ function TrophiesPage() {
     return (
         <div id='TrophiesPage'>
             <h1 className='ItemsText' id='TrophiesText'>TROPHIES</h1>
+            <p className='ItemsDesc' id='TrophiesDesc'>some of the cool stuff i've done!</p>
             <div id="TrophiesSection" className='ScrollSection'>
                 {Trophies.map((trophy, i) => (
                     <div className='Trophy' key={i}>

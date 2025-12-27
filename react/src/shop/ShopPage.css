@@ -72,7 +72,7 @@
 .ItemsDesc>a {
     color: inherit;
     text-decoration: underline;
-    color: #e3e4e3;
+    color: #551F15;
 }
 
 .ItemsDesc>a:hover {
@@ -80,7 +80,7 @@
 }
 
 .ItemsDesc {
-    color: #e3e4e3;
+    color: #551F15;
 }
 
 #TrophiesSection {
@@ -379,4 +379,8 @@
 
 .OpenClotheDemo:hover {
     color: #137594;
+}
+
+#TrophiesDesc {
+    color: #551F15;
 }
