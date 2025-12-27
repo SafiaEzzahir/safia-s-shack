@@ -327,3 +327,23 @@
     padding-left: 0px;
     margin-left: 0px;
 }
+
+.OpenClothe {
+    position: relative;
+    z-index: 5;
+}
+
+#WardrobePage {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+#WardrobePageTitle {
+    color: #3f0f0f;
+}
+
+#WardrobePageText {
+    color: #551F15;
+}

@@ -37,7 +37,7 @@ function Clothes() {
                     </button>
                     {WhatClothesIsOpen === i && (
                         <div className='OpenClothe' style={{backgroundImage: `url(${clothe.openimage})`}}>
-                            <p>hello! this is a project</p>
+                            <p className='OpenClotheTitle'>{clothe.title}</p>
                         </div>
                     )}
                 </div>
@@ -48,7 +48,9 @@ function Clothes() {
 
 function WardrobePage() {
     return (
-        <div className='WardrobePage'>
+        <div id='WardrobePage'>
+            <h1 id='WardrobePageTitle'>WARDROBE</h1>
+            <p id='WardrobePageText'>try some of my projects!</p>
             <Rail />
             <Clothes />
         </div>
