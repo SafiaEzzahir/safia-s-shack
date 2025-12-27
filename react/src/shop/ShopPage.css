@@ -254,6 +254,10 @@
     background-color: #e3e4e3;
 }
 
+#PostBoxFormTextInputs>input::placeholder {
+    color: rgb(63, 15, 15, 0.6);
+}
+
 #PostBoxForm>textarea {
     font-family: inherit;
     font-size: 18px;
@@ -263,6 +267,10 @@
     border-radius: 3.9px;
     border: solid 3px #0a3944;
     background-color: #e3e4e3;
+}
+
+#PostBoxForm>textarea::placeholder {
+    color: rgb(63, 15, 15, 0.6);
 }
 
 #FasttravelSection {
