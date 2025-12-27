@@ -172,7 +172,7 @@
 */
 
 .Clothe {
-    width: 80px;
+    width: 60px;
     display: flex;
     align-items: center;
     justify-content: start;
@@ -331,6 +331,9 @@
 .OpenClothe {
     position: relative;
     z-index: 5;
+    width: 200px;
+    margin-left: 30px;
+    margin-top: -50px;
 }
 
 #WardrobePage {
@@ -342,8 +345,38 @@
 
 #WardrobePageTitle {
     color: #3f0f0f;
+    margin-bottom: 0px;
+    margin-top: 40px;
 }
 
 #WardrobePageText {
     color: #551F15;
+}
+
+.OpenClotheTitle {
+    color: #2ab4d9;
+}
+
+.OpenClotheName {
+    color: inherit;
+}
+
+.OpenClotheDesc {
+    color: inherit;
+}
+
+.OpenClotheDemo {
+    padding: 10px;
+}
+
+.OpenClotheCode {
+    color: inherit;
+}
+
+.OpenClotheDemo, .OpenClotheCode:hover {
+    color: #2ab4d9;
+}
+
+.OpenClotheDemo:hover {
+    color: #137594;
 }

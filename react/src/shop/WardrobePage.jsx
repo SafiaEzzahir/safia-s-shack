@@ -6,9 +6,9 @@ import RailImage from '../assets/rail.png'
 import AthenaHoodie from '../assets/clothes/athenajumper.png'
 
 const ClothesList = [
-    {image: AthenaHoodieHanger, title: 'athena award hoodie 1', openimage: AthenaHoodie},
-    {image: AthenaHoodieHanger, title: "npc safia's dress", openimage: AthenaHoodie},
-    {image: AthenaHoodieHanger, title: 'athena award hoodie 2', openimage: AthenaHoodie}
+    {image: AthenaHoodieHanger, title: 'athena award hoodie 1', openimage: AthenaHoodie, name: 'task-setter' , desc: 'full stack web app for the athena award, made my own api and react frontend', demo: 'https://safias-task-setter.onrender.com', code: 'https://github.com/SafiaEzzahir/task-setter/'},
+    {image: AthenaHoodieHanger, title: "npc safia's dress", openimage: AthenaHoodie, name: 'safia-s-shack', desc: 'this website! went in-depth with react and started exploring creative coding', demo: 'https://safia-s-shack.vercel.app', code: 'https://github.com/SafiaEzzahir/safia-s-shack'},
+    {image: AthenaHoodieHanger, title: 'athena award hoodie 2', openimage: AthenaHoodie, name: 'parthenon', desc: 'vanilla js typing game made for parthenon (a hackathon!)', demo: 'https://yanellaft.github.io/Parthenon/', code: 'https://github.com/YanellaFT/Parthenon'}
 ]
 
 // rail
@@ -38,6 +38,10 @@ function Clothes() {
                     {WhatClothesIsOpen === i && (
                         <div className='OpenClothe' style={{backgroundImage: `url(${clothe.openimage})`}}>
                             <p className='OpenClotheTitle'>{clothe.title}</p>
+                            <p className='OpenClotheName'>{clothe.name}</p>
+                            <p className='OpenClotheDesc'>{clothe.desc}</p>
+                            <a className='OpenClotheDemo' href={clothe.demo}>try it!</a>
+                            <a className='OpenClotheCode' href={clothe.code}>see the code</a>
                         </div>
                     )}
                 </div>
@@ -50,7 +54,7 @@ function WardrobePage() {
     return (
         <div id='WardrobePage'>
             <h1 id='WardrobePageTitle'>WARDROBE</h1>
-            <p id='WardrobePageText'>try some of my projects!</p>
+            <p id='WardrobePageText'>try some of my projects :)</p>
             <Rail />
             <Clothes />
         </div>
