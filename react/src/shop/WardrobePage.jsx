@@ -1,13 +1,13 @@
 import { useState } from 'react';
 
 import './ShopPage.css'
-import planticon from '../assets/icons/planticon.png'
-import stickericon from '../assets/icons/stickericon.png'
+import AthenaHoodieHanger from '../assets/clothes/athenajumperonhanger.png'
+import RailImage from '../assets/rail.png'
 
 const ClothesList = [
-    {image: planticon, title: 'athena award hoodie 1'},
-    {image: stickericon, title: "npc safia's dress"},
-    {image: planticon, title: 'athena award hoodie 2'}
+    {image: AthenaHoodieHanger, title: 'athena award hoodie 1'},
+    {image: AthenaHoodieHanger, title: "npc safia's dress"},
+    {image: AthenaHoodieHanger, title: 'athena award hoodie 2'}
 ]
 
 // rail
@@ -18,7 +18,7 @@ const ClothesList = [
 
 function Rail() {
     return (
-        <p>this is the rail - a long horizontal cylinder</p>
+        <img id='RailImage' src={RailImage} alt='wardrobe rail'/>
     )
 }
 
@@ -35,7 +35,7 @@ function Clothes() {
         <div id='Clothes'>
             {ClothesList.map((clothe, i) => (
                 <button className='Clothe' key={i} onClick={() => console.log(i)}>
-                    <img src={clothe.image} alt={clothe.title} />
+                    <img className='ClotheImage' src={clothe.image} alt={clothe.title} />
                 </button>
             ))}
         </div>

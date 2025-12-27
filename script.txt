@@ -20,6 +20,7 @@ to do:
 
  ---- D O N E ----
 
+    - add spacing between link sections ✅
         - change post box form placeholder color ✅
         - design skill icons ✅
  - make shop page ✅
