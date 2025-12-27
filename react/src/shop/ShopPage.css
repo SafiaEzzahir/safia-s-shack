@@ -202,6 +202,7 @@
 .FasttravelLinkIcon {
     width: 20px;
     padding: 5px;
+    margin-right: 23px;
 }
 
 .FasttravelLinkLink {
@@ -299,4 +300,11 @@
     width: 100px;
     height: auto;
     margin-bottom: 70px;
+}
+
+.FasttravelLinksSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
 }
