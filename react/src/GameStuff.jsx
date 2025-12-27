@@ -53,7 +53,8 @@ function SpeechWindow({ onFinishLevels }) {
                 const data = await res.json();
                 setLevels(data);
 
-                localStorage.removeItem('visited');
+                //localStorage.removeItem('visited');
+                // ^^^ testing purposes
 
                 // detect if site has been visited before and persist flag
                 const visitcheck = localStorage.getItem("visited");
@@ -84,7 +85,7 @@ function SpeechWindow({ onFinishLevels }) {
                     return prevLevel;
                 }
 
-                // compute next level deterministically (no module-level state)
+                // compute next level deterministically (no module-level state) - bruh what does this mean did i even write that
                 if (prevLevel === 1) {
                     return visited ? 3 : 2;
                 }

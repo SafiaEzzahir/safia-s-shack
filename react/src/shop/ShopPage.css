@@ -165,6 +165,7 @@
 #Clothes {
     display: flex;
     justify-content: start;
+    margin-top: 5px;
 }
 
 /* make custom spacing to look more natural 
@@ -323,7 +324,7 @@
 #RailImage {
     padding: 15px;
     width: 380px;
-    height: 15px;
+    height: 11px;
     padding-left: 0px;
     margin-left: 0px;
 }
