@@ -191,6 +191,7 @@
     align-items: center;
     justify-content: center;
     width: 350px;
+    color: #e3e4e3;
 }
 
 .FasttravelLink {
@@ -204,7 +205,7 @@
 }
 
 .FasttravelLinkLink {
-    color: inherit;
+    color: #e3e4e3;
     /* remember to add scroll styling if necessary */
     overflow-y: auto;
 }
