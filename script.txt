@@ -1,10 +1,12 @@
 TO DO
 
-    - wardrobe
-        - design clothes (pixel art)
-        - click to expand
+    - add a description to trophies page
+    - design fasttravel link icons
 
-        - figure out how to design the hangers and stuff - it's gunna be quite cool!! 
+    - wardrobe
+        - design the rest of your clothes (pixel art)
+        - click to expand ✅
+        - figure out how to design the hangers and stuff - it's gunna be quite cool!! ✅
 
 1. a. welcome, adventurer!
     - save not visited, give tutorial
