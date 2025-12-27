@@ -2,13 +2,14 @@ import { useState } from 'react';
 
 import './ShopPage.css'
 import AthenaHoodieHanger from '../assets/clothes/athenajumperonhanger.png'
+import PinkDressHanger from '../assets/clothes/pinkdressonhanger.png'
 import RailImage from '../assets/rail.png'
-import AthenaHoodie from '../assets/clothes/athenajumper.png'
+
 
 const ClothesList = [
-    {image: AthenaHoodieHanger, title: 'athena award hoodie 1', openimage: AthenaHoodie, name: 'task-setter' , desc: 'full stack web app for the athena award, made my own api and react frontend', demo: 'https://safias-task-setter.onrender.com', code: 'https://github.com/SafiaEzzahir/task-setter/'},
-    {image: AthenaHoodieHanger, title: "npc safia's dress", openimage: AthenaHoodie, name: 'safia-s-shack', desc: 'this website! went in-depth with react and started exploring creative coding', demo: 'https://safia-s-shack.vercel.app', code: 'https://github.com/SafiaEzzahir/safia-s-shack'},
-    {image: AthenaHoodieHanger, title: 'athena award hoodie 2', openimage: AthenaHoodie, name: 'parthenon', desc: 'vanilla js typing game made for parthenon (a hackathon!)', demo: 'https://yanellaft.github.io/Parthenon/', code: 'https://github.com/YanellaFT/Parthenon'}
+    {image: AthenaHoodieHanger, title: 'athena award hoodie 1', name: 'task-setter' , desc: 'full stack web app for the athena award, made my own api and react frontend', demo: 'https://safias-task-setter.onrender.com', code: 'https://github.com/SafiaEzzahir/task-setter/'},
+    {image: PinkDressHanger, title: "npc safia's dress", name: 'safia-s-shack', desc: 'this website! went in-depth with react and started exploring creative coding', demo: 'https://safia-s-shack.vercel.app', code: 'https://github.com/SafiaEzzahir/safia-s-shack'},
+    {image: AthenaHoodieHanger, title: 'athena award hoodie 2', name: 'parthenon', desc: 'vanilla js typing game made for parthenon (a hackathon!)', demo: 'https://yanellaft.github.io/Parthenon/', code: 'https://github.com/YanellaFT/Parthenon'}
 ]
 
 // rail
